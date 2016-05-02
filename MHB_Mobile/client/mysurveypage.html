@@ -1,0 +1,70 @@
+<template name="mysurveypage">
+
+	<h1>
+   <div id="logo">
+    <img src="img/myhappyblood_main.png" alt="My Happy Blood_main">
+  </div>
+
+  <div id="bluebar">
+   <img src="img/mysurvey_title_bluebar.png" alt="My Happy Blood_main">
+ </div>
+</h1>
+
+
+{{> survey}} <br> <br>
+
+<div id="footer">
+  {{> navbar}}
+</div>
+
+</template>
+
+
+<template name="survey">
+
+	
+	<form method="post">
+    Date:  <br>
+    1. Did you take your medication today? <br>
+    <input type="radio" name="yesNoBox1" value="yes" > yes <br>
+    <input type="radio" name="yesNoBox1" value="no" > no <br> <br>
+    If not, why? (please comment): <br>
+    
+    <select   name="selectWhy" required >
+      <option value="">(Choose Option)</option>
+      <option value="fogot">I forgot to take it.</option>
+      <option value="refill">I need to refill medication.</option>
+      <option value="lost">I lost my medication.</option>
+      <option value="other">Other</option>
+    </select> <br> <br>
+
+    <textarea rows="4" cols="50" placeholder="Please comment why" disabled></textarea>
+
+
+    <br><br>
+
+    2. Have you noticed any bruising or bleeding today? <br>
+
+    <input type="radio" name="yesNoBox2" value="yes" > yes <br>
+    <input type="radio" name="yesNoBox2" value="no" > no <br> <br>
+
+
+  
+
+
+    <input type="submit" name="submitSurvey" value="Submit" align="center" style="height:50px; width:50px">
+  </form>
+
+
+
+
+    <br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
+
+</template>
+
+
+
+

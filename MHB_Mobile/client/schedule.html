@@ -1,0 +1,36 @@
+<template name="schedule">
+	
+<p>
+ 
+ <form method="post" class="world_of_day" align="center">
+ 	<!-- <input type="hidden" name="redirect" value="localhost:3000/home" /> -->
+  	Date of Test: <br> 
+  	<input type="text" id="test-datepicker"> <br>
+
+  	INR Test Result: <br>
+  	<input type="text" id="inr-test-result"> <br>
+
+  	<input type="submit" name="submitINR" value="Submit" align="center">
+
+ </form>
+</p>
+
+{{> charts}}
+
+
+
+
+	  <br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
+
+</template>
+
+
+
+
+
+<template name = "charts">
+	{{> c3 myChartData}}
+</template>
