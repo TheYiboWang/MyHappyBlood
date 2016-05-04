@@ -40,7 +40,7 @@ Router.route('/home');
 Template.loginButtons.rendered = function(){
     Accounts._loginButtonsSession.set('dropdownVisible', true);
     $(".login-close-text").hide();
-  }  
+}  
 Template.home.events({
   'click .logout': function(){
     Meteor.logout();
@@ -48,10 +48,13 @@ Template.home.events({
 })
 
 }
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
-
+ Accounts.ui.config({
+//   // requestPermissions: {
+//   //   facebook: ['user_likes'],
+//   //   github: ['user', 'repo']
+//   // },
+//   // requestOfflineToken: {
+//   //   google: true
+//   // },
+   passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+ });

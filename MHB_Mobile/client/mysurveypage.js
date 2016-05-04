@@ -39,6 +39,25 @@
 // });
 
 
+// function check() {
+//     var el = document.getElementById("combo");
+//     var str = el.options[el.selectedIndex].text;
+//     if(str == "Others") {
+//         show();
+//     }else {
+//         hide();
+//     }
+
+// }
+// function hide(){
+//     document.getElementById('dummyText').style.visibility='hidden';
+// }
+// function show(){
+//     document.getElementById('dummyText').style.visibility='visible';
+// }
+
+
+
 Template.survey.events({
 	'click input[type=submit]': function(event){
 		event.preventDefault();
@@ -49,10 +68,10 @@ Template.survey.events({
 		console.log(currentUserId);	
 		console.log("written");
 		var ynb1 = document.forms[0];
-		if(ynb1[0].checked) {
-			var number1 = 1;
-		} else {
+		if(ynb1[1].checked) {
 			var number1 = 0;
+		} else {
+			var number1 = 1;
 		}
 		if(ynb1[4].checked) {
 			var number2 = 1;
@@ -68,9 +87,49 @@ Template.survey.events({
 		
 		Router.go('/thankyou');
 	}
+
+	// 'change #slct': function(event) {
+	// 	var ynb1 = document.forms[0];
+	// 	 if(ynb1[1].checked) {
+	// 	 	$("slct").show();
+	// 	 }
+	// }
 })
 
+Template.survey.rendered=function() {
+	$("#txtarea").hide();
+	$('[name="selectWhy"]').hide();
 
+	 $('[name="yesNoBox1"]').change(function() {
+  		var val = $('[name="yesNoBox1"]:checked').val();
+  		console.log(val);
+     	if(val=="no"){
+         	$('[name="selectWhy"]').show();
+         	 $("p1").html("If not please choose why");
+     	} else {
+            $('[name="selectWhy"]').hide();
+            $("p1").html("");
+            $("#txtarea").hide();
+     	}
+	 });
+
+	 $('[name="selectWhy"]').change(function() {
+	 	var val = $('[name="selectWhy"]').val();
+	 	if (val=="other") {
+	 		$("#txtarea").show();
+	 	} else {
+	 		$("#txtarea").hide();
+	 	}
+
+
+
+
+
+	 })
+
+
+
+}
 
 
 

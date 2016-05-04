@@ -2,34 +2,24 @@
 
 <!-- This is the navigation bar template -->
 <template name="navbar">
-  <table>
+  <table style="background-color: black" align="center">
     <tr>
-      <td>
+      <td style="padding-right: 10px">
         
-        <img src="img/navbar_left_arrow_icon.png" onClick="history.go(-1);">
+        <img src="img/Left-Arrow.png" onClick="history.go(-1);">
        
       </td>
 
-      <td>
-        <a href="/profilepage">
-          <img src="img/navbar_profile_icon.png">
-        </a>
-      </td>
 
-      <td>
+      <td style="padding:5px">
         <a href="/home">
-          <img src="img/navbar_home_icon.png">
+          <img src="img/Home.png">
         </a>
       </td>
 
-      <td>
-        <a href="/helppage">
-          <img src="img/navbar_help_icon.png">
-        </a>
-      </td>
 
-      <td>
-        <img src="img/navbar_right_arrow_icon.png" onClick="history.go(1);">
+      <td style="padding-left: 10px">
+        <img src="img/Right-Arrow.png" onClick="history.go(1);">
       </td>
     </tr>
   </table>

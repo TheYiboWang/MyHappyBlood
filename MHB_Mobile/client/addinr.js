@@ -1,12 +1,7 @@
-// schedule.js
-
-
-
-
-Template.schedule.rendered=function() {
+Template.addinr.rendered=function() {
 	$('#test-datepicker').datepicker();
 }
-Template.schedule.events({
+Template.addinr.events({
 	'click input[name=submitINR]': function(event){
 		event.preventDefault();
    		var documentId = this._id;

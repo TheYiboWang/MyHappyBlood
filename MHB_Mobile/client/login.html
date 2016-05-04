@@ -5,14 +5,13 @@
   </head>
   <h1>
     <div id="logo">
-      <img src="img/happyblood.png" alt="My Happy Blood">
+      <img src="img/Logo.png" alt="Logo.png">
     </div>
   </h1>
   
   <h2>
     <div id="login-screen">
-      {{> loginButtons}}
-      
+      {{> loginButtons}}   
     </div>
   </h2>
 
@@ -24,44 +23,53 @@
 
 <!-- This is the home page template -->
 <template name="home">
-  <h1> <img src="img/myhappyblood_main.png" alt="My Happy Blood_main"> </h1>
 
-  <table>
+{{> header}}
+
+
+
+
+  <table align="center">
     <tr>
-      <td style="padding:5px">
-        <a href="/profile">
-          <img src="img/myprofile.png" alt="My Profile">
+      <td style="padding-right:5px">
+        <a href="/myprogress">
+          <img src="img/My-Progress.png" alt="My Profile">
         </a>
       </td>
 
-      <td style="padding:5px">
-        <a href="/mymedspage">
-          <img src="img/mymeds.png" alt="My Meds">
+      <td style="padding-left: 5px">
+        <a href="/mysurveypage">
+          <img src="img/My-Survey.png" alt="My survey">
         </a>
       </td>
     </tr>
 
     <tr>
-      <td style="padding:5px">
-        <a href="/mylearningpage">
-          <img src="img/mylearning.png" alt="My learning">
+      <td style="padding-right:5px">
+        <a href="/mymedspage">
+          <img src="img/Medication.png" alt="My Meds">
         </a>
       </td>
 
-      <td style="padding: 5px">
-        <a href="/mysurveypage">
-          <img src="img/mysurvey.png" alt="My survey">
+      <td style="padding-left:5px">
+        <a href="/mylearningpage">
+          <img src="img/Learning.png" alt="My learning">
         </a>
       </td>
     </tr>
   </table>
 
+
+
+
+  
+
+  <!-- <input type="button" class="logout" value="Log Out"> <br><br><br><br> -->
+
+  <br><br>
   <div id="footer">
   {{> navbar}}
   </div>
-  
-
-  <input type="button" class="logout" value="Log Out"> <br><br><br><br>
 
 </template>
 

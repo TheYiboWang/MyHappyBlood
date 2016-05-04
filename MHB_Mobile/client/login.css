@@ -33,5 +33,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 65px;
+    height: 90px;
 }  
+
+#bluebar {
+    border: 0;
+    width: auto;
+    height: auto;
+    background-image: url("img/Title-Bar.png" );
+}
