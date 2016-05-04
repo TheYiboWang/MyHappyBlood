@@ -7,6 +7,10 @@ Router.route('/profile', function() {
   this.render('profile');
 });
 
+Router.route('/myprogress', function() {
+  this.render('myprogress');
+});
+
 Router.route('/mylearningpage', function() {
   this.render('mylearningpage');
 });
@@ -31,8 +35,8 @@ Router.route('/warfarin/', function() {
 // Router.route('mylearningWarfarinDiet', {
 //   path: '/mylearningpage/diet'
 // });
-Router.route('/schedule', function() {
-  this.render('schedule');
+Router.route('/addinr', function() {
+  this.render('addinr');
 });
 
 Router.route('/thankyou', function() {
