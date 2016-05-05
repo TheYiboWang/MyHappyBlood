@@ -20,7 +20,10 @@ Meteor.methods({
                         title: 'Reminder',
                         historyId: result
                     },
-                    query: {}
+                    query: {
+                        // Ex. send to a specific user if using accounts:
+                        //userId: 'xxxxxxxxx'
+                    }
                 });
             }
         });
