@@ -1,22 +1,16 @@
 <template name="mylearningWarfarin">
 
-	<h1>
-    	<div id="logo">
-      		<img src="img/myhappyblood_main.png" alt="My Happy Blood_main">
-    	</div>
-
-		<div id="bluebar">
-			<img src="img/mylearning_warfarin_button.png" alt="My Happy Blood_main">
-		</div>
-  	</h1>
+{{> header title="My Learning: Warfarin"}}
 
 
   	<table>
     <tr>
-      <td style="">
+      <td style="background-image: url('img/Large-Grey-Tab_Unclicked.png'); font-size: 20px; font-family: verdana">
         
           <!-- <a href="/warfarin">  -->
-          <img src="img/about_warfarin.png" id="tt1"> 
+          <p  id="tt1"> 
+               About Warfarin     
+          </p>
           <!-- </a> -->
       </td>
 
@@ -36,9 +30,10 @@
     </tr>
    	</table>
 
+    <div id="textsize">
     <p id="p1">
     	
-    	<p1 style="font-size: 150%"> About Warfarin (Counmadin) </p1> <br> <br>
+    	<p1 class="largeText"> About Warfarin (Counmadin) </p1> <br> <br>
 
     	This is a bloodthinner in tablet form. Your warfarin dose is based on what you eat and drink, what other medications you take, and how you feel. It takes a few days to a week to start working. (APA) <br> <br>
 
@@ -48,6 +43,9 @@
 
     <img src="img/mylearning_aboutwarfarin_3 warfarin tablets.png">
     </p>
+    </div>
+
+    <input type="range" min="10" max="40">
 
     <br><br><br><br>
     <div id="footer">

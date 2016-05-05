@@ -121,10 +121,6 @@ Template.survey.rendered=function() {
 	 		$("#txtarea").hide();
 	 	}
 
-
-
-
-
 	 })
 
 

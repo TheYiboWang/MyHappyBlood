@@ -1,23 +1,21 @@
 <template name="addinr">
+
+{{> header title="My Progress: Add INR"}}
 	
 <p>
  
- <form method="post" class="world_of_day" align="center">
+ <form method="post" class="world_of_day" align="center" style="font-size: 5; font-family: verdana">
  	<!-- <input type="hidden" name="redirect" value="localhost:3000/home" /> -->
   	Date of Test: <br> 
-  	<input type="text" id="test-datepicker"> <br>
+  	<input type="text" id="test-datepicker"> <br><br>
 
   	INR Test Result: <br>
-  	<input type="text" id="inr-test-result"> <br>
+  	<input type="number" id="inr-test-result" min="0" max="10"> <br><br>
 
   	<input type="submit" name="submitINR" value="Submit" align="center">
 
  </form>
 </p>
-
-{{> charts}}
-
-
 
 
 	  <br><br><br><br>
@@ -27,10 +25,3 @@
 
 </template>
 
-
-
-
-
-<template name = "charts">
-	{{> c3 myChartData}}
-</template>

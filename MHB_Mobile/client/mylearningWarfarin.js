@@ -43,3 +43,13 @@ Template.mylearningWarfarin.events ({
 
 //innerHTML = "<span class='error'>my error</span>";
 
+Template.mylearningWarfarin.rendered = function() {
+$('input').change(function() {
+    var v = $(this).val();
+    console.log("gogogo");
+    $('#textsize').css('font-size', v + 'px');
+    console.log("run");
+});
+
+
+}

@@ -43,6 +43,14 @@ Router.route('/thankyou', function() {
   this.render('thankyou');
 });
 
-Router.route('/INRhistory', function() {
-  this.render('INRhistory');
+Router.route('/inrhistory', function() {
+  this.render('inrhistory');
+});
+
+Router.route('/video', function() {
+  this.render('video');
+});
+
+Router.route('/contact', function() {
+  this.render('contact');
 });

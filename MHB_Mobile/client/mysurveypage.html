@@ -1,6 +1,6 @@
 <template name="mysurveypage">
 
-{{> header}}
+{{> header title="My Survey"}}
 
 
 
@@ -29,7 +29,7 @@
       <option value="refill">I need to refill medication.</option>
       <option value="lost">I lost my medication.</option>
       <option value="other">Other</option>
-      <br> 
+      
     </select> 
     <br>
     <textarea form="input" id="txtarea" rows="4" cols="35" placeholder="Please comment why" style="font-size: 20px"></textarea>
@@ -41,7 +41,16 @@
     <input type="radio" name="yesNoBox2" value="yes" > yes <br>
     <input type="radio" name="yesNoBox2" value="no" > no <br> <br>
 
+    3. How many meals did you eat any green vegetables? <br>
+    <input type="radio" name="numberOfMeals" value="0"> 0 
+    <input type="radio" name="numberOfMeals" value="1"> 1 
+    <input type="radio" name="numberOfMeals" value="2"> 2
+    <input type="radio" name="numberOfMeals" value="3"> 3
+    <input type="radio" name="numberOfMeals" value="4"> 4+
+
   </form>
+
+  <br>
     
     <div style="text-align: center">
     <input type="submit" name="submitSurvey" value="Submit">

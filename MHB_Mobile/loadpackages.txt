@@ -3,3 +3,8 @@ load following packages:
 meteor add accounts-passwordmeteor add accounts-ui
 meteor add iron:router
 meteor update iron:router
+
+meteor add rajit:bootstrap3-datepicker
+
+meteor add d3js:d3
+
