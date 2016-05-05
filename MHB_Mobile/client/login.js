@@ -8,12 +8,14 @@
 //     // Router.go('home'); (Also tried this and didn't work)
 //   });
 // }); 
+import { Meteor } from 'meteor/meteor';
 
 if (Meteor.isClient) {
 
   Meteor.startup(function () {
     Meteor.defer(function () {Router.go('home');});
 });
+
 
 Router.route('/', function() {
   route.render('/home');
@@ -26,13 +28,38 @@ Router.onBeforeAction(function () {
 
   if (!Meteor.userId()) {
     // if the user is not logged in, render the Login template
-    this.render('login');
+
+      this.render('login');
+      // console.log("User ID"+userId);
   } else {
     // otherwise don't hold up the rest of hooks or our route/action function
     // from running
     this.next();
+    console.log("login User email: " +Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address);
+    // Users.insert({
+    //   email: Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address),
+    // });
+  /***OUR DUMMY DATA**/
+  var date = new Date();  //create a new date with current date and time
+  Users.insert({
+      email: Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address,
+      age: "43",
+      medhistory: [{medication: "Warfarin",daily_dose: "50", days: "MWF", time: "5:00"}],
+      INRscores: [{score: "55", date: date.toString()}]
+
+  });
+  if(!Users.find({'email': Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address}))
+  {
+      Users.insert({
+          email: Meteor.users.findOne({_id:Meteor.userId()}.emails[0].address)
+      });
+      console.log("Inside !Users.find");
+  }
+
   }
 });
+
+
 
 Router.route('/home');
 
@@ -48,6 +75,10 @@ Template.home.events({
 })
 
 }
+// if(Meteor.isServer)
+// {
+//    
+// }
  Accounts.ui.config({
 //   // requestPermissions: {
 //   //   facebook: ['user_likes'],
@@ -56,5 +87,6 @@ Template.home.events({
 //   // requestOfflineToken: {
 //   //   google: true
 //   // },
-   passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+    passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+
  });
