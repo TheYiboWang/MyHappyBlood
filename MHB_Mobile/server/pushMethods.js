@@ -13,11 +13,11 @@ Meteor.methods({
             if (!error) {
                 Push.send({
                     from: 'push',
-                    title: 'Hello World',
-                    text: 'This notification has been sent from the server',
+                    title: 'Reminder',
+                    text: 'Just a friendly reminder that you need to take your medication!',
                     badge: badge,
                     payload: {
-                        title: 'Hello World',
+                        title: 'Reminder',
                         historyId: result
                     },
                     query: {}
