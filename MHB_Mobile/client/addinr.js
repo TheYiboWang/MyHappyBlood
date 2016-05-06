@@ -8,7 +8,7 @@ Template.addinr.events({
 		var currentTime = new Date();
 		var currentUserId = Meteor.userId();
 		console.log(currentTime);
-		console.log(currentUserId);	
+		console.log(currentUserId);
 		console.log("written");
 		var f1 = document.forms[0];
 
@@ -16,12 +16,20 @@ Template.addinr.events({
 		console.log(f1[1].value);
 
 
-		allINR.insert({
+		const INRdata = {
 			timestamp: currentTime,
 			dot: f1[0].value,
 			tr: f1[1].value,
 			createdBy: currentUserId
-		})
+		};
+
+//Push new INRdata to users collections with associated user
+		Meteor.users.update( { _id: currentUserId }, {
+			$push: {
+				INRhistory: INRdata
+			}
+		});
+
 
 		Router.go('/thankyou');
 	}
@@ -41,6 +49,3 @@ Template.addinr.events({
 //   });
 // });
 // </script>
-
-
-

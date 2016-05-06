@@ -65,7 +65,7 @@ Template.survey.events({
 		var currentTime = new Date();
 		var currentUserId = Meteor.userId();
 		console.log(currentTime);
-		console.log(currentUserId);	
+		console.log(currentUserId);
 		console.log("written");
 		var ynb1 = document.forms[0];
 		if(ynb1[1].checked) {
@@ -78,13 +78,26 @@ Template.survey.events({
 		} else {
 			var number2 = 0;
 		}
-		allsurveys.insert({
+		// allsurveys.insert({
+		// 	timestamp: currentTime,
+		// 	medOrNo: number1,
+		// 	bleedOrNo: number2,
+		// 	createdBy: currentUserId
+		// })
+		const surveyData = {
 			timestamp: currentTime,
 			medOrNo: number1,
 			bleedOrNo: number2,
 			createdBy: currentUserId
-		})
-		
+		};
+
+//Push new survey data to user collections with associtad data
+		Meteor.users.update( { _id: currentUserId }, {
+			$push: {
+				medicineHistory: surveyData
+			}
+		});
+
 		Router.go('/thankyou');
 	}
 
@@ -165,26 +178,26 @@ Template.survey.rendered=function() {
 
 // <html>
 //         <body>
-         
+
 //         <form id="myForm">
 //         Name: <br><input type="text" name="Name" placeholder="Name" size="40"/><br/>
 //         Phone: <br><input type="text" name="Phone No" placeholder="Phone Number"/><br/>
-       
+
 //        INBOUND: <br><select name="INBOUND" id="INBOUND" onchange="showTextArea()" placeholder="INBOUND"><option>No<option>Yes</select><br/>
 
 //         <button type="button" onclick="ShowText();">Submit</button>
 //         </form>
 //         <p>Result:</p>
 //         <p><textarea cols=40 rows=7 id="show" onClick='selectText(this);'></textarea></p>
-          
+
 //           <div id="location" style="display:none;"><p>Location:</p>
 //         <p><textarea cols=40 rows=7  onClick='selectText(this);'></textarea>
 //             </div>
 //             </p>
-            
+
 //             <script>
 //             function ShowText(){
-             
+
 //                 // find each input field inside the 'myForm' form:
 //                 var inputs = myForm.querySelectorAll('input,select');
 //                 // declare 'box' variable (textarea element):
@@ -197,16 +210,16 @@ Template.survey.rendered=function() {
 //                     box.value += inputs[i].name + ': '+inputs[i].value+'\n';
 //                 }
 //             }M
-//             function selectText(textField) 
+//             function selectText(textField)
 //               {
 //                 textField.focus();
 //                 textField.select();
 //               }
-//               function showTextArea() 
+//               function showTextArea()
 //               {
 //                 var e = document.getElementById("INBOUND");
 //                 var strUser = e.options[e.selectedIndex].value;
-                
+
 //                 if(strUser == 'Yes')
 //                   {
 //                     document.getElementById('location').style.display = "block";
@@ -215,14 +228,14 @@ Template.survey.rendered=function() {
 //                   {
 //                     document.getElementById('location').style.display = "none";
 //                     }
-                
-                
+
+
 //               }
 //             </script>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
 //         </body></html>
