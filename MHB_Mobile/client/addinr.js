@@ -1,16 +1,27 @@
 Template.addinr.rendered=function() {
 	$('#test-datepicker').datepicker();
 }
+
+/***
+ * @param: event - when 'click input[name=submitINR]' event happens, execute the codes in side the function.
+ * @variable: dot: date of test taken
+ * @variable: ts: test score
+ * @description: Ming and I were able to  find how to use Meteor user data and store data into user data associated
+ * with meteor userID.****/
 Template.addinr.events({
+
+    /*WHEN CLICK SUBMISSION BUTTON EVENT HAPPENS*/
 	'click input[name=submitINR]': function(event){
 		event.preventDefault();
    		var documentId = this._id;
-		var currentTime = new Date();
+		var currentTime = new Date(); //Store date as an iso date object
+        
 		var currentUserId = Meteor.userId();
-		console.log(currentTime);
+
+		console.log(currentTime.toDateString);
 		console.log(currentUserId);
 		console.log("written");
-		var f1 = document.forms[0];
+		var f1 = document.forms[0]; //get the input fields
 
 		console.log(f1[0].value);
 		console.log(f1[1].value);
@@ -19,7 +30,7 @@ Template.addinr.events({
 		const INRdata = {
 			timestamp: currentTime,
 			dot: f1[0].value,
-			tr: f1[1].value,
+			ts: f1[1].value,
 			createdBy: currentUserId
 		};
 
