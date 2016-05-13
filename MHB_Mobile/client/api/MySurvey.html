@@ -15,13 +15,13 @@
 
 <template name="survey">
 
-	
+
 	<form method="post" style="font-size: 20px; font-family: verdana">
     Date:  <br>
     1. Did you take your medication today? <br>
-    <input type="radio" name="yesNoBox1" value="yes" > yes <br>
-    <input type="radio" name="yesNoBox1" value="no" > no <br> 
-    
+    <input type="radio" name="yesNoBox1" value="yes" id="medyes" > Yes <br>
+    <input type="radio" name="yesNoBox1" value="no" id="medno"> No <br>
+
     <p1> </p1>
     <select name="selectWhy" style="font-size: 20px">
       <option value="">(Choose Option)</option>
@@ -29,8 +29,8 @@
       <option value="refill">I need to refill medication.</option>
       <option value="lost">I lost my medication.</option>
       <option value="other">Other</option>
-      
-    </select> 
+
+    </select>
     <br>
     <textarea form="input" id="txtarea" rows="4" cols="35" placeholder="Please comment why" style="font-size: 20px"></textarea>
     <!-- style="visibility:hidden" -->
@@ -38,20 +38,20 @@
 
     2. Have you noticed any bruising or bleeding today? <br>
 
-    <input type="radio" name="yesNoBox2" value="yes" > yes <br>
-    <input type="radio" name="yesNoBox2" value="no" > no <br> <br>
+    <input type="radio" name="yesNoBox2" value="yes" id="bleedyes"> Yes <br>
+    <input type="radio" name="yesNoBox2" value="no" id="bleedno"> No <br> <br>
 
     3. How many meals did you eat any green vegetables? <br>
-    <input type="radio" name="numberOfMeals" value="0"> 0 
-    <input type="radio" name="numberOfMeals" value="1"> 1 
-    <input type="radio" name="numberOfMeals" value="2"> 2
-    <input type="radio" name="numberOfMeals" value="3"> 3
-    <input type="radio" name="numberOfMeals" value="4"> 4+
+    <input type="radio" name="numberOfMeals" value="0" id="meal0"> 0
+    <input type="radio" name="numberOfMeals" value="1" id="meal1"> 1
+    <input type="radio" name="numberOfMeals" value="2" id="meal2"> 2
+    <input type="radio" name="numberOfMeals" value="3" id="meal3"> 3
+    <input type="radio" name="numberOfMeals" value="4" id="meal4+"> 4+
 
   </form>
 
   <br>
-    
+
     <div style="text-align: center">
     <input type="submit" name="submitSurvey" value="Submit">
     </div>
@@ -63,7 +63,3 @@
     </div>
 
 </template>
-
-
-
-

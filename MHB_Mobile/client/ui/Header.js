@@ -1,6 +1,8 @@
 // header.js
 Template.header.events({
+
 	'click': function(event) {
+
 		if (!event.target.matches('.moreinfo')) {
 
     	var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -11,7 +13,7 @@ Template.header.events({
         	openDropdown.classList.remove('show');
       	}
     	}
-  		}
+  	}
 	},
 
 	'click #moreinfo':function(event) {
