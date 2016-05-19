@@ -1,3 +1,4 @@
+Template.setupPushReminder.events({
 
 'submit form': function(event){
     event.preventDefault();
@@ -18,3 +19,4 @@
 		});
     event.target.playerName.value = "";
 }
+})
