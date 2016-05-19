@@ -5,6 +5,8 @@ Meteor.methods({
         if (last != null) {
         badge = last.badge + 1;
         }
+        
+        //Use find() function to get the user defined notifData and trigger the notification at the specified time
 
         PastReminders.insert({
             badge: badge,
