@@ -1,4 +1,4 @@
-
+Template.setupPushReminder.events({
 
 'submit form': function(event){
     event.preventDefault();
@@ -8,23 +8,16 @@
     var playerNameVar = event.target.playerName.value;
     Meteor.users.update( { _id: currentUserId }, {
 			$push: {
-				INRhistory: INRdata
-			}, function (error, result) {
-            if (!error) {
-                Push.send({
                     from: 'push',
                     title: 'Reminder',
                     text: 'Just a friendly reminder that you need to take your medication!',
                     badge: badge,
-                    payload: {
-                        title: 'Reminder',
-                        historyId: result
-                    },
                     query: {
                         // Ex. send to a specific user if using accounts:
                         //userId: 'xxxxxxxxx'
                     }
-                });
 		});
     event.target.playerName.value = "";
 }
+
+})
