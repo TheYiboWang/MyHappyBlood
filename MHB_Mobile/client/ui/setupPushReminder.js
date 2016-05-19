@@ -3,8 +3,7 @@ Template.setupPushReminder.events({
 'submit form': function(event){
     event.preventDefault();
     var documentId = this._id;
-    var playerNameVar = event.target.playerName.value;
-    var notifTime = document.forms[0];
+    var notifTime = document.forms[0]; //get form input
 
 		const notificationData = {
 			timestamp: currentTime,
@@ -17,6 +16,5 @@ Template.setupPushReminder.events({
 				notifData: notificationData
 			}
 		});
-    event.target.playerName.value = "";
 }
 })
