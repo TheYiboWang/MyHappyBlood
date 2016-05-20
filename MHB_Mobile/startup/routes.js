@@ -26,6 +26,10 @@ Router.route('/helpInstructions', function() {
 Router.route('/warfarin/', function() {
   this.render('mylearningWarfarin');
 });
+Router.route('/safetytips/', function() {
+  this.render('mylearningSafety');
+});
+
 
 // Router.route('mylearningWarfarin', {
 //   // get parameter via this.params
@@ -45,6 +49,9 @@ Router.route('/thankyou', function() {
 
 Router.route('/inrhistory', function() {
   this.render('inrhistory');
+});
+Router.route('/medhistory', function() {
+  this.render('medhistory');
 });
 
 Router.route('/video', function() {

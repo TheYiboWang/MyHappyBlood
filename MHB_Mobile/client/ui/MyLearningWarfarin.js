@@ -9,8 +9,19 @@ Template.mylearningWarfarin.events ({
 		document.getElementById("p1").innerHTML = text1 + '<img src="img/mylearning_aboutwarfarin_3 warfarin tablets.png"> ' ;
 	},
 
-	'click #tt2': function(event) {
-		var text2 = "<span class='largeText'> Warfarin and Diet </span> <br> <br>" +
+    'click #tt2': function(event) {
+        var text2 = "<span class='largeText'> Using Other Medicines </span> <br> <br> "  + 
+        "Tell your doctor about every medicine you take. The doctor needs to know about all your medicines, over-the-counter medicines, vitamins, and herbal products you used before you started taking a blood thinner. <br><br>" +
+        "Medicines you get over the counter may also interact with your blood thinner. Following is a list of some common medicines that you should talk with your doctor or pharmacist about before using. <br><br>" +
+        "Pain relievers, cold medicines, or stomach remedies, such as: "
+         // 
+        document.getElementById("p1").innerHTML = text2;
+    },
+
+    
+
+	'click #tt3': function(event) {
+		var text3 = "<span class='largeText'> Warfarin and Diet </span> <br> <br>" +
     	"Blood Thinners and Vitamin K <br>" +
 
     	"Coumadin or warfarin are anticoagulant medicines that thin the blood to prevent the formation of blood clots. <br>" +
@@ -24,16 +35,16 @@ Template.mylearningWarfarin.events ({
 
     	"If you choose to drink , limit to only 1-2 drinks. Try your best to avoid alcohol as much as possible. <br>"
 
-		document.getElementById("p1").innerHTML = text2;
+		document.getElementById("p1").innerHTML = text3;
 	},
 
-	'click #tt3': function(event) {
-		var text3 = "<span class='largeText'> Monitoring Labs </span> <br> <br>" +
+	'click #tt4': function(event) {
+		var text4 = "<span class='largeText'> Monitoring Labs </span> <br> <br>" +
 
     	"This blood test helps your doctor decide how much medicine you need." +
     	"The Prothromibin Time(PT) or the International Normalized Ratio (INR) blood test mesures how fast your blood clots and lets the doctor know if your dose needs to be changed."
 
-    	document.getElementById("p1").innerHTML = text3;
+    	document.getElementById("p1").innerHTML = text4;
 	}
 
 
