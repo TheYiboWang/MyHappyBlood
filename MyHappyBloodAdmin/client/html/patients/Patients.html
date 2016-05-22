@@ -1,0 +1,17 @@
+<template name="Patients">
+
+    {{#if $.Session.get 'newPatient'}}
+        {{>NewPatient}}
+    {{else}}
+        <button class="new-patient">Add Patient</button>
+    {{/if}}
+
+
+    <section>
+        <!--If template has subscribed the published collection (check Patients.js) -->
+        {{#if Template.subscriptionsReady}}
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
+    </section>
+</template>
