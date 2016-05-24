@@ -8,9 +8,13 @@ Meteor.methods({
         
         //Use find() function to get the user defined notifData and trigger the notification at the specified time
 
+        var s1 = Meteor.users.find({_id: currentUserId}).fetch()[0].notifData;
+        var len = s1.length;
+        var s2 = s1[len-1].timestamp;
+
         PastReminders.insert({
             badge: badge,
-            addedAt: new Date()
+            addedAt: s2
         }, function (error, result) {
             if (!error) {
                 Push.send({

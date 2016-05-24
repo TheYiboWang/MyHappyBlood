@@ -33,7 +33,9 @@ Meteor.publish("userData", function() {
 
             INRhistory: 1,
 
-            EatingPlan: 1
+            EatingPlan: 1,
+
+            notifData:1
         }
      });
    }

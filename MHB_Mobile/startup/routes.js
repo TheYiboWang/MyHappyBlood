@@ -30,6 +30,10 @@ Router.route('/safetytips/', function() {
   this.render('mylearningSafety');
 });
 
+Router.route('/setupPushReminder/', function() {
+  this.render('setupPushReminder');
+});
+
 
 // Router.route('mylearningWarfarin', {
 //   // get parameter via this.params
