@@ -27,3 +27,6 @@ perak:c3
 msavin:mongol
 fullcalendar:fullcalendar
 raix:push
+
+meteor-platform
+autopublish
