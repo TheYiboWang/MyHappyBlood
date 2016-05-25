@@ -1,5 +1,8 @@
 Meteor.methods({
     serverNotification: function () {
+    
+    var currentUserId = Meteor.userId();
+
         var last = PastReminders.findOne({}, {sort: {addedAt: -1}});
         var badge = 1
         if (last != null) {
@@ -18,7 +21,7 @@ Meteor.methods({
         }, function (error, result) {
             if (!error) {
                 Push.send({
-                    from: 'push',
+                    from: 'MHB',
                     title: 'Reminder',
                     text: 'Just a friendly reminder that you need to take your medication!',
                     badge: badge,
@@ -26,10 +29,7 @@ Meteor.methods({
                         title: 'Reminder',
                         historyId: result
                     },
-                    query: {
-                        // Ex. send to a specific user if using accounts:
-                        //userId: 'xxxxxxxxx'
-                    }
+                    query: { }
                 });
             }
         });
