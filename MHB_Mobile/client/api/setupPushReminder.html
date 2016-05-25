@@ -1,7 +1,43 @@
+
 <template name="setupPushReminder">
-Enter your desired notification time in the following format: hh:mm
-    <form>
+	{{> navbar}}
+	<div class="container">
+		{{#if currentUser}}
+		Enter your desired notification time in the following format: hh:mm
+    	<form>
         <input type="text" name="notificationTime" id="n1">
         <input type="submit" value="Set Push Notification">
-    </form>
+    	</form>
+		<button id="removeHistory">Remove History</button>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" value="">hide received notifications
+			</label>
+		</div>
+		<hr />
+		<table>
+			<thead>
+				<tr>
+					<td>Notification #</td>
+					<td>Added at</td>
+					<td>Received at</td>
+				</tr>
+			</thead>
+			{{> row}}
+		</table>
+		{{else}}
+		<p>You need to be logged in</p>
+		{{/if}}
+	</div>
+	<br />
+</template>
+
+<template name="row">
+	{{#each pastReminders}}
+		<tr>
+			<td>{{badge}}</td>
+			<td>{{addedAt}}</td>
+			<td>{{receivedAt}}</td>
+		</tr>
+	{{/each}}
 </template>
