@@ -32,7 +32,7 @@ Template.setupPushReminder.events({
 	Meteor.call("serverNotification");
     Meteor.users.update( { _id: currentUserId }, {
 			$push: {
-				notifData: notificationData
+				notifData: notificationTime
 			}
 		});
 	}
