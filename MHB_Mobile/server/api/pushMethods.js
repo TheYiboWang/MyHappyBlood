@@ -1,7 +1,5 @@
 Meteor.methods({
     serverNotification: function () {
-    
-    var currentUserId = Meteor.userId();
 
         var last = PastReminders.findOne({}, {sort: {addedAt: -1}});
         var badge = 1
@@ -10,7 +8,7 @@ Meteor.methods({
         }
         
         //Use find() function to get the user defined notifData and trigger the notification at the specified time
-
+        var currentUserId = Meteor.userId();
         var s1 = Meteor.users.find({_id: currentUserId}).fetch()[0].notifData;
         var len = s1.length;
         var s2 = s1[len-1].timestamp;
