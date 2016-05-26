@@ -4,9 +4,16 @@
 	{{> header title="My Progress: My INR History"}}
 
 	{{> charts}}
+
+	<br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
 </template>
 
 
 <template name = "charts">
 	{{> c3 myChartData}}
 </template>
+
+

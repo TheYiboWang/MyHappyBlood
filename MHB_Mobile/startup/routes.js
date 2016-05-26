@@ -57,11 +57,16 @@ Router.route('/inrhistory', function() {
 Router.route('/medhistory', function() {
   this.render('medhistory');
 });
-
+Router.route('/mealshistory', function() {
+  this.render('mealshistory');
+});
 Router.route('/video', function() {
   this.render('video');
 });
 
 Router.route('/contact', function() {
   this.render('contact');
+});
+Router.route('/aboutus', function() {
+  this.render('aboutus');
 });
