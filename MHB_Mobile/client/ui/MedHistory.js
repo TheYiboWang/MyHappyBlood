@@ -3,7 +3,7 @@
 
 Template.medhistory.rendered = function () {
 	var currentUserId = Meteor.userId();
-	var source = Meteor.users.find({_id: currentUserId}).fetch()[0].medicineHistory;
+	var source = Meteor.users.findOne({_id: currentUserId}).surveyData;
 	var i;
 	for(i = 0; i < source.length; i++){
     	source[i].start = source[i]['timestamp'];
