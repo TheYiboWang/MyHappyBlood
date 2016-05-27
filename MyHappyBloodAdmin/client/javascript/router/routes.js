@@ -11,10 +11,10 @@ FlowRouter.route('/',{
         }
         /**You can implement pageviews**/
         // GAnalytics.pageview();
-        
+
         BlazeLayout.render('HomeLayout');
     }
-    
+
 });
 
 /**** Routes to the main page.***/
@@ -22,11 +22,19 @@ FlowRouter.route('/main',{
 
     name: 'main',
     action() {
-       
+
         /**You can implement pageviews**/
         // GAnalytics.pageview();
 
-        BlazeLayout.render('MainLayout',{main:'Patients'});
+        BlazeLayout.render('MainLayout',{main: 'Patients'});
     }
 
+});
+
+/**** Routes to an individual patient ***/
+FlowRouter.route('/patients/:id', {
+  name: 'single-patient',
+  action () {
+    BlazeLayout.render('MainLayout',{main: 'PatientSingle'});
+  }
 });

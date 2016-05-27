@@ -19,7 +19,10 @@ MedicationHistory = new SimpleSchema({
         type: String
     },
     date: {
-        type: Date
+        type: String,
+        autoValue: function(){
+          var date = new Date();
+          return moment(date).format("MM-DD-YYYY");}
     }
 
 });
@@ -32,7 +35,10 @@ MealPlan = new SimpleSchema({
         type: String
     },
     date: {
-        type: Date
+        type: String,
+        autoValue: function(){
+          var date = new Date();
+          return moment(date).format("MM-DD-YYYY");}
     }
 
 });
@@ -82,6 +88,8 @@ PatientSchema = new SimpleSchema({
 
 
 });
+
+
 
 // Meteor.methods({
 //     toggleMenuItem: function (id,currentState) {
