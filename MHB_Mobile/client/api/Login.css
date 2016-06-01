@@ -2,7 +2,7 @@
 #login-screen{
     display: block;
     margin: 15px auto;
-    width: 226px;
+    width: 260px;
     height: 240px;
 }
 
@@ -34,7 +34,7 @@ body {
     right: 0;
     bottom: 0;
     height: 90px;
-}  
+}
 
 #bluebar {
     border: 0;

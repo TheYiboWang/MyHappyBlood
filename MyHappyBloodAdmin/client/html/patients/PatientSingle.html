@@ -23,7 +23,7 @@
     </tr>
     {{#each patient.medicationHistory}}
       <tr>
-        <th>{{date}}</th>
+        <th>{{formatDate date}}</th>
         <th>{{dosage}}</th>
       </tr>
     {{/each}}
@@ -50,7 +50,7 @@
 
     {{#each patient.mealPlan}}
       <tr>
-        <th>{{date}}</th>
+        <th>{{formatDate date}}}</th>
         <th>{{amount}}</th>
       </tr>
     {{/each}}

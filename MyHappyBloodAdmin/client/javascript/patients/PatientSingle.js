@@ -6,9 +6,13 @@ Template.PatientSingle.onCreated(function(){
     });
 });
 /****Helper used to GET single patient information****/
-Template.PatientSingle.helpers({ 
+Template.PatientSingle.helpers({
         patient: ()=> {
           var id = FlowRouter.getParam('id');
           return Patients.findOne({_id: id});
     }
+});
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('MM-DD-YYYY');
 });

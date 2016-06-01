@@ -19,10 +19,7 @@ MedicationHistory = new SimpleSchema({
         type: String
     },
     date: {
-        type: String,
-        autoValue: function(){
-          var date = new Date();
-          return moment(date).format("MM-DD-YYYY");}
+        type: Date,
     }
 
 });
@@ -35,10 +32,7 @@ MealPlan = new SimpleSchema({
         type: String
     },
     date: {
-        type: String,
-        autoValue: function(){
-          var date = new Date();
-          return moment(date).format("MM-DD-YYYY");}
+        type: Date
     }
 
 });

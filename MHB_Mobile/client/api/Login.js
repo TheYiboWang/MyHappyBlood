@@ -9,79 +9,108 @@
 //   });
 // });
 import { Meteor } from 'meteor/meteor';
-
+var myLogoutFunc = function() {
+  Router.go('/home')
+}
 
 if (Meteor.isClient) {
 
-Meteor.startup(function () {
-    Meteor.defer(function () {Router.go('home');});
-});
+  Meteor.startup(function () {
+      Meteor.defer(function () {Router.go('home');});
+  });
 
 
-Meteor.subscribe("userData");
+  Meteor.subscribe("userData");
 
-
-Router.route('/', function() {
-  route.render('/home');
-});
-
-
-Router.onBeforeAction(function () {
-  // all properties available in the route function
-  // are also available here such as this.params
-
-  if (!Meteor.userId()) {
-    // if the user is not logged in, render the Login template
-
-      this.render('login');
-      // console.log("User ID"+userId);
-  } else {
-    // otherwise don't hold up the rest of hooks or our route/action function
-    // from running
-    this.next();
-  //   console.log("login User email: " +Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address);
-  //   // Users.insert({
-  //   //   email: Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address),
-  //   // });
-  // /***OUR DUMMY DATA**/
-  // var date = new Date();  //create a new date with current date and time
-  // Users.insert({
-  //     email: Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address,
-  //     age: "43",
-  //     medhistory: [{medication: "Warfarin",daily_dose: "50", days: "MWF", time: "5:00"}],
-  //     INRscores: [{score: "55", date: date.toString()}]
-  //
-  // });
-  // if(!Users.find({'email': Meteor.users.findOne({_id:Meteor.userId()}).emails[0].address}))
-  // {
-  //     Users.insert({
-  //         email: Meteor.users.findOne({_id:Meteor.userId()}.emails[0].address)
-  //     });
-  //     console.log("Inside !Users.find");
-  // }
-
+  Template.loginButtons.rendered = function(){
+      Accounts._loginButtonsSession.set('dropdownVisible', true);
+      $(".login-close-text").hide();
   }
-});
+  Template.home.events({
+    'click .logout': function(){
+      Meteor.logout();
+    }
+  })
 
-
-
-Router.route('/home');
-
-
-Template.loginButtons.rendered = function(){
-    Accounts._loginButtonsSession.set('dropdownVisible', true);
-    $(".login-close-text").hide();
 }
-Template.home.events({
-  'click .logout': function(){
-    Meteor.logout();
-  }
+
+AccountsTemplates.configure({
+  //Behavior
+  confirmPassword: true,
+  // Redirects
+  homeRoutePath: '/home',
+
+  texts: {
+    title: {
+      signIn: "Welcome to My Happy Blood",
+      signUp: "Welcome to My Happy Blood",
+    },
+
+    errors: {
+      loginForbidden: "Account does not exist",
+      pwdMismatch: "These password don't match. Try agan?",
+      validationErrors: "Please check your username or/and password",
+    }
+  },
+
+  onLogoutHook: myLogoutFunc
 })
 
-}
+AccountsTemplates.configureRoute('signIn', {
+    name: 'signin',
+    path: '/login'
+})
 
-
-
-Accounts.ui.config({
-   passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL',
-});
+var pwd = AccountsTemplates.removeField('password');
+AccountsTemplates.removeField('email');
+AccountsTemplates.addFields([
+  {
+    _id: "username",
+    type: "text",
+    displayName: "Username",
+    required: true,
+  },
+  {
+    _id:'email',
+    type: 'email',
+    displayName: "Email Address",
+    required: false,
+    errStr: "Invalid Email Address"
+  },
+  {
+    _id: "firstname",
+    type: "text",
+    displayName: "First Name",
+    required: true,
+  },
+  {
+    _id: "lastname",
+    type: "text",
+    displayName: "Last Name",
+    required: true,
+  },
+  {
+    _id: "age",
+    type: "text",
+    displayName: "Age     ",
+    re: /^[0-9]+$/,
+    required: true,
+    errStr: "Invalid Age Number"
+  },
+  {
+    _id: "gender",
+    type: "select",
+    displayName: "Gender    ",
+    select: [
+        {
+            text: "Male",
+            value: "male",
+        },
+        {
+            text: "Female",
+            value: "female",
+        },
+    ],
+  },
+  pwd
+])
