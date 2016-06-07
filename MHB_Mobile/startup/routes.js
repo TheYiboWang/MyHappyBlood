@@ -1,4 +1,24 @@
 // routes.js
+Router.onBeforeAction(function () {
+  // all properties available in the route function
+  // are also available here such as this.params
+
+  if (!Meteor.userId()) {
+    // if the user is not logged in, render the Login template
+
+      this.render('login');
+      // console.log("User ID"+userId);
+  } else {
+    // otherwise don't hold up the rest of hooks or our route/action function
+    // from running
+    this.next();
+  }
+});
+
+
+Router.route('/home');
+
+
 Router.route('/helppage', function () {
   this.render('helppage');
 });

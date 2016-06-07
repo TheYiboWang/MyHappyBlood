@@ -1,8 +1,8 @@
 Template.charts.helpers({
     "myChartData": function() {
-      
+
         var currentUserId = Meteor.userId();
-        var theReport = Meteor.users.find({_id: currentUserId}).fetch()[0].INRhistory;
+        var theReport = Meteor.users.findOne({_id: currentUserId}).INRhistory;
          //theReport = allINR.find().fetch();
 
         xData = ['x'];

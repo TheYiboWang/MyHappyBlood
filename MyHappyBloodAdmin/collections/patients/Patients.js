@@ -19,7 +19,7 @@ MedicationHistory = new SimpleSchema({
         type: String
     },
     date: {
-        type: Date
+        type: Date,
     }
 
 });
@@ -82,6 +82,8 @@ PatientSchema = new SimpleSchema({
 
 
 });
+
+
 
 // Meteor.methods({
 //     toggleMenuItem: function (id,currentState) {

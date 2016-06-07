@@ -4,16 +4,10 @@ import { Accounts } from 'meteor/accounts-base';
 
 //set more fields during registration
 Accounts.onCreateUser(function(options, user) {
-
- user.gender = "M"; //gender default to Male
-
- user.age = 30; //age defualt to 30
-
- user.medicineHistory = []; //initialize to an empty array
+ user.surveyData = []; //initialize to an empty array
 
  user.INRhistory = []; //initialize to an empty array
 
- user.EatingPlan = []; //initialize to an empty array
  // Don't forget to return the new user object at the end!
  return user;
 });
@@ -25,15 +19,11 @@ Meteor.publish("userData", function() {
     if (currentUser) {
         return Meteor.users.find( currentUser , {
         fields: {
-            gender: 1,
-
-            age : 1,
-
-            medicineHistory: 1,
+            surveyData: 1,
 
             INRhistory: 1,
 
-            EatingPlan: 1,
+            profile: 1,
 
             notifData:1
         }

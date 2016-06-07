@@ -1,0 +1,59 @@
+<template name="PatientSingle">
+  <a href="/main">back</a>
+  <h2>Patient Name:  {{patient.first}} {{patient.last}}</h2>
+  <h3>Age: {{patient.age}}</h3>
+  <h4>Email Address:  {{patient.username}}</h4>
+
+  <br>
+  <h2>Medication History</h2>
+
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 5px;
+  }
+  </style>
+  <table style="width:100%">
+    <tr>
+      <th>Date</th>
+      <th>Dosage</th>
+    </tr>
+    {{#each patient.medicationHistory}}
+      <tr>
+        <th>{{formatDate date}}</th>
+        <th>{{dosage}}</th>
+      </tr>
+    {{/each}}
+  </table>
+
+
+  <br>
+  <h2> Meal Plan </h2>
+
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 5px;
+  }
+  </style>
+  <table style="width:100%">
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+
+    {{#each patient.mealPlan}}
+      <tr>
+        <th>{{formatDate date}}}</th>
+        <th>{{amount}}</th>
+      </tr>
+    {{/each}}
+  </table>
+
+</template>
