@@ -3,12 +3,12 @@
 Template.charts2.helpers({
     "myChart2Data": function() {
       
-        var currentUserId = Meteor.userId();
-        var theReport = Meteor.users.find({_id: currentUserId}).fetch()[0].EatingPlan;
+  var currentUserId = Meteor.userId();
+  var theReport = Meteor.users.findOne({_id: currentUserId}).surveyData;
          //theReport = allINR.find().fetch();
 
         xData = ['x'];
-        yData = ['INR Test Result'];
+        yData = ['Meal History'];
 
         res_x = _.pluck(theReport, 'timestamp');
         console.log("res_x",res_x);

@@ -70,19 +70,22 @@ Template.survey.events({
 			var meal = 4;
 		}
 
-		const surveyData = {
+		console.log(meal);
+		console.log(medbool);
+		console.log(bleedbool);
+		const surveyD = {
 			timestamp: currentTime,
 			medOrNo: medbool,
 			bleedOrNo: bleedbool,
 			mealTimes: meal,
 			createdBy: currentUserId
 		};
-
+		console.log(surveyD);
 
 //Push new survey data and eating plan to user collections with associtad data
 		Meteor.users.update( { _id: currentUserId }, {
 			$push: {
-				surveyData: surveyData
+				surveyData: surveyD
 			}
 		});
 

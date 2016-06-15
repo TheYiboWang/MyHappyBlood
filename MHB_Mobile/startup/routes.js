@@ -16,7 +16,9 @@ Router.onBeforeAction(function () {
 });
 
 
-Router.route('/home');
+Router.route('/home', function() {
+  this.render('home');
+});
 
 
 Router.route('/helppage', function () {

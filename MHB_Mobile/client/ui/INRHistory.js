@@ -19,6 +19,8 @@ Template.charts.helpers({
         yData = yData.concat(res_y);
         console.log("yData", yData);
 
+        var th = 8;
+        var tl = 2;
        // var chart = c3.generate({
         return {
                 data: {
@@ -26,6 +28,7 @@ Template.charts.helpers({
                         xFormat: '%x', // 'xFormat' can be used as custom format of 'x'
                         columns: [
                                     xData,
+
                                     yData
                                  ],
                         labels: true
@@ -35,12 +38,39 @@ Template.charts.helpers({
                           x: {
                               type: 'timeseries',
                               tick: {
+                                  rotate: 90,
                                       format: '%x'
                                     }
-                               }
-                             },
+                              },
 
-               }
+                          y: {
+                            max:10,
+                            min:0,
+                            label: {
+                              text: 'INR Test Result',
+                              position:'outer-middle'
+                            }
+                          }
+                      },
+                grid: {
+                  y: {
+                    lines:[{value: tl, text:'low threshold'},
+                            {value: th, text:'high threshold'}],
+         
+
+                  }
+                },
+
+                subchart: {
+                  show: true
+                },
+
+               zoom: {
+                enable: true
+               },
+
+
+        }
 
     }
 });
