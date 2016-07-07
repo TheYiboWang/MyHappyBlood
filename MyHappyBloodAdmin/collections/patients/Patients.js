@@ -11,11 +11,8 @@ Patients.allow({
 });
 
 
-MedicationHistory = new SimpleSchema({
-    name: {
-        type: String
-    },
-    dosage: {
+INRHistory = new SimpleSchema({
+    INR: {
         type: String
     },
     date: {
@@ -24,12 +21,15 @@ MedicationHistory = new SimpleSchema({
 
 });
 
-MealPlan = new SimpleSchema({
-    name: {
-        type: String
+SurveyHistory = new SimpleSchema({
+    BleedOrNot: {
+      type: Boolean
     },
-    amount: {
-        type: String
+    MedOrNot:{
+      type: Boolean
+    },
+    mealPlan:{
+      type: Number
     },
     date: {
         type: Date
@@ -64,11 +64,11 @@ PatientSchema = new SimpleSchema({
             type: "hidden"
         }
     },
-    medicationHistory:{
-        type:[MedicationHistory]
+    INRHistory:{
+        type:[INRHistory]
     },
-    mealPlan:{
-        type:[MealPlan]
+    SurveyHistory:{
+        type:[SurveyHistory]
     },
     author: {
         type: String,
