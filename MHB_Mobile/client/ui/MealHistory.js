@@ -37,6 +37,7 @@ Template.charts2.helpers({
                           x: {
                               type: 'timeseries',
                               tick: {
+                                      rotate: 90,
                                       format: '%x'
                                     }
                                }

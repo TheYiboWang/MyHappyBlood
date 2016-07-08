@@ -1,8 +1,10 @@
 // surveypage.js
 
 Template.survey.rendered=function() {
+	document.getElementById("date").innerHTML = "Date:" + Date();
 	$("#txtarea").hide();
 	$('[name="selectWhy"]').hide();
+	$('[alt="saftey-tip_all"]').hide();
 
 	 $('[name="yesNoBox1"]').change(function() {
   		var val = $('[name="yesNoBox1"]:checked').val();
@@ -25,7 +27,18 @@ Template.survey.rendered=function() {
 	 		$("#txtarea").hide();
 	 	}
 
-	 })
+	 });
+
+	 $('[name="yesNoBox2"]').change(function() {
+	 	console.log('aaaaa');
+	 	var val = $('[name="yesNoBox2"]:checked').val();
+	 	  		console.log(val);
+	 	if (val == "yes") {
+	 		$('[alt="saftey-tip_all"]').show();
+	 	} else {
+	 		$('[alt="saftey-tip_all"]').hide();
+	 	}
+	 });
 }
 
 Template.survey.events({

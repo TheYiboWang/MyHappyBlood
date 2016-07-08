@@ -23,6 +23,9 @@ Template.charts.helpers({
         var tl = 2;
        // var chart = c3.generate({
         return {
+          size: {
+             height: 640,
+          },
                 data: {
                         x: 'x',
                         xFormat: '%x', // 'xFormat' can be used as custom format of 'x'
@@ -38,7 +41,8 @@ Template.charts.helpers({
                           x: {
                               type: 'timeseries',
                               tick: {
-                                  rotate: 90,
+                                  count: 10,
+                                  rotate: 75,
                                       format: '%x'
                                     }
                               },
@@ -46,6 +50,7 @@ Template.charts.helpers({
                           y: {
                             max:10,
                             min:0,
+                            padding: {top:1, bottom:1},
                             label: {
                               text: 'INR Test Result',
                               position:'outer-middle'
@@ -61,9 +66,9 @@ Template.charts.helpers({
                   }
                 },
 
-                subchart: {
-                  show: true
-                },
+                // subchart: {
+                //   show: true
+                // },
 
                zoom: {
                 enable: true

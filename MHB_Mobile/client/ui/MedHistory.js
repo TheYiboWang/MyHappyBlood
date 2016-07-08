@@ -41,11 +41,19 @@ Template.medhistory.rendered = function () {
         center: 'prev title next',
         right: ''
     },
+    eventSources: [
+    {
     events: source2,
-    eventColor: 'red',
+    color: 'red'
 
+    },
+    {
     events: source1,
-    eventColor: 'green'
+    color: 'green'
+    }
+    ]
+   
+
 });
 
 

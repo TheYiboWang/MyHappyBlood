@@ -48,6 +48,14 @@ Router.route('/helpInstructions', function() {
 Router.route('/warfarin/', function() {
   this.render('mylearningWarfarin');
 });
+Router.route('/othermeds/', function() {
+  this.render('mylearningOtherMeds');
+});
+Router.route('/warning/', function() {
+  this.render('mylearningWarning');
+});
+
+
 Router.route('/safetytips/', function() {
   this.render('mylearningSafety');
 });

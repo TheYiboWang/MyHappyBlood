@@ -3,7 +3,7 @@
 {{> header title="My Learning: Warfarin"}}
 
 
-  	<table>
+<!--   	<table>
     <tr style="height: 40px; padding: 0px;">
       <td style="width: 80px; padding-left: 5px; padding-right: 5px; background-size: cover; background-image: url('img/Small-Tab_Clicked.png'); font-size: 10px; font-family: verdana">
           <h1  id="tt1"> 
@@ -45,13 +45,59 @@
 
     <img src="img/mylearning_aboutwarfarin_3 warfarin tablets.png">
     </p>
-    </div>
+    </div> -->
 
-    <input type="range" min="15" max="35"> <br><br>
+<div class="container" style="font-size: 18px"> <br>
+  
+  <ul class="nav nav-pills nav-adjust">
+    <li class="active"><a data-toggle="pill" href="#home">Warfarin</a></li>
+    <li><a data-toggle="pill" href="#menu1">Drugs</a></li>
+    <li><a data-toggle="pill" href="#menu2">Diet</a></li>
+    <li><a data-toggle="pill" href="#menu3">Labs</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>About Warfarin (Counmadin)</h3>
+      <p>This is a bloodthinner in tablet form. Your warfarin dose is based on what you eat and drink, what other medications you take, and how you feel. It takes a few days to a week to start working. (APA) <br> <br> Never skip a dose, and never take a double dose. If you miss a dose, take it as soon as you remember. 
+      <br><br>    <img src="img/dose.png">
+     
+  </p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Using Other Medicines</h3>
+      <p> Tell your doctor about every medicine you take. The doctor needs to know about all your medicines, over-the-counter medicines, vitamins, and herbal products you used before you started taking a blood thinner. <br><br>
+        Medicines you get over the counter may also interact with your blood thinner. Following is a list of some common medicines that you should talk with your doctor or pharmacist about before using. <br><br>
+        Pain relievers, cold medicines, or stomach remedies, such as: 
+    </p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Warfarin and Diet</h3>
+      <p>i) Rivaroxaban (riv-are- ox-a-ban) will reduce the risk of stroke and blood clots in people with a serious heart rhythm problem called non-valvular atrial fibrillation and in people undergoing knee or hip replacement. <br><br>
+    ii) With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. Rivaroxaban is also used after hip or knee replacement surgery to prevent thrombosis, a condition in which harmful blood clots form in the blood vessels of the legs.<br><br> 
+    iii) Do not stop taking rivaroxaban without first talking with your doctor. Take rivaroxaban exactly as prescribed by your doctor. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. <br><br>
+    iv) Avoid grapefruit and grapefruit juice. <br><br>
+</p>
+    </div> 
+
+    <div id="menu3" class="tab-pane fade">
+      <h3>Monitoring Labs</h3>
+      <p>This blood test helps your doctor decide how much medicine you need.
+      The Prothromibin Time(PT) or the International Normalized Ratio (INR) blood test mesures how fast your blood clots and lets the doctor know if your dose needs to be changed.
+      </p>
+    </div> 
+
+  </div>
+
+</div>
+
+    <div id="slider" align="center">
+      <input type="range" min="20" max="35" style="width: 300px; height: 20px; border-radius: 6px"> 
+    </div> <br><br>
 
     <br><br><br><br>
-    <div id="footer">
+  <div id="footer">
       {{> navbar}}
-    </div>
+  </div>
 
 </template>
