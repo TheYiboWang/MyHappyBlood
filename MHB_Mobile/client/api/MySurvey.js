@@ -45,7 +45,6 @@ Template.survey.events({
 	'click input[type=submit]': function(event){
 		event.preventDefault();
 
-		var currentTime = new Date();
 		var currentUserId = Meteor.userId();
 
 		var medyes = document.getElementById("medyes");
@@ -54,6 +53,7 @@ Template.survey.events({
 		var meal1 = document.getElementById("meal1");
 		var meal2 = document.getElementById("meal2");
 		var meal3 = document.getElementById("meal3");
+		var meal4 = document.getElementById("meal4+");
 
 		if(medyes.checked) {
 			var medbool = true;
@@ -86,21 +86,39 @@ Template.survey.events({
 		console.log(meal);
 		console.log(medbool);
 		console.log(bleedbool);
-		const surveyD = {
-			timestamp: currentTime,
+		const new_survey = {
+			timestamp: moment(new Date()).format('YYYY-MM-DD'),
 			medOrNo: medbool,
 			bleedOrNo: bleedbool,
 			mealTimes: meal,
 			createdBy: currentUserId
 		};
-		console.log(surveyD);
+		console.log(new_survey);
 
 //Push new survey data and eating plan to user collections with associtad data
-		Meteor.users.update( { _id: currentUserId }, {
-			$push: {
-				surveyData: surveyD
-			}
-		});
+		var survey_data = Meteor.users.findOne(currentUserId).surveyData;
+		var last_survey = survey_data[survey_data.length - 1];
+		console.log(last_survey);
+		if (survey_data.length == 0 || new_survey.timestamp != last_survey.timestamp)
+		{
+			Meteor.users.update( { _id: currentUserId }, {
+				$push: {
+					surveyData: new_survey
+				}
+			});
+		}
+		else {
+			Meteor.users.update( { _id: currentUserId }, {
+				$pull: {
+					surveyData: last_survey
+				}
+			});
+			Meteor.users.update( { _id: currentUserId }, {
+				$push: {
+					surveyData: new_survey
+				}
+			});
+		}
 
 		Router.go('/thankyou');
 	}

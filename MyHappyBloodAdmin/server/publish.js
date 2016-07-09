@@ -1,8 +1,13 @@
+
 Meteor.publish('patients', function () {
-    return Patients.find({author: this.userId});
+    return Patients.find({});
 });
 
-Meteor.publish('patient', function (id) {
-    check(id, String);
-    return Patients.find({_id: id});
+Patients.allow({
+    insert: function (userId, doc) {
+        return !!userId;
+    },
+    update: function (userId, doc) {
+        return !!userId;
+    }
 });

@@ -1,13 +1,31 @@
 <template name="PatientSingle">
 
-  <a href="/main">back</a>
-  <h2>Patient Name:  {{patient.first}} {{patient.last}}</h2>
-  <h3>Age: {{patient.age}}</h3>
-  <h3>Email Address:  {{patient.username}}</h3>
+  {{#if Template.subscriptionsReady}}
+      <a href="/main">back</a>
+      <h2>Patient Name:    {{patient.profile.firstname}} {{patient.profile.lastname}}</h2>
 
-  <br>
-  <h2> Patints' Survey History</h2>
+      <h3>Age: {{patient.profile.age}}</h3>
+
+      <h3>Email Address:  </h3>
+        <h4>
+          <ul style="list-style-type:square">
+            {{#each patient.emails}}
+              <li>&nbsp; {{address}}</li>
+            {{/each}}
+          </ul>
+        </h4>
+
+      <br>
+      <h2> Patient's Survey History</h2>
 
       {{> c3 myChartData}}
+  {{else}}
+      Loading...
+
+  {{/if}}
 
 </template>
+<!--
+<template name="PatientChart">
+
+</template> -->

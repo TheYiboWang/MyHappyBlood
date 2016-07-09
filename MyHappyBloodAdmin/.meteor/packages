@@ -45,3 +45,10 @@ check
 momentjs:moment
 alanning:roles
 perak:c3
+peernohell:c3
+http
+session
+meteorhacks:picker
+
+npm-container
+meteorhacks:npm

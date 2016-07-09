@@ -33,3 +33,5 @@ raix:push
 
 meteor-platform
 twbs:bootstrap
+http
+momentjs:moment

@@ -13,12 +13,10 @@ Template.addinr.events({
     /*WHEN CLICK SUBMISSION BUTTON EVENT HAPPENS*/
 	'click input[name=submitINR]': function(event){
 		event.preventDefault();
-   		var documentId = this._id;
-		var currentTime = new Date(); //Store date as an iso date object
-        
+   	var documentId = this._id;
+
 		var currentUserId = Meteor.userId();
 
-		console.log(currentTime.toDateString);
 		console.log(currentUserId);
 		console.log("written");
 		var f1 = document.forms[0]; //get the input fields
@@ -28,9 +26,9 @@ Template.addinr.events({
 
 
 		const INRdata = {
-			timestamp: currentTime,
-			dot: f1[0].value,
-			ts: f1[1].value,
+			timestamp: moment(new Date()).format('YYYY-MM-DD'),
+			dot: moment(f1[0].value).format('YYYY-MM-DD'),
+			ts: Number(f1[1].value),
 			createdBy: currentUserId
 		};
 

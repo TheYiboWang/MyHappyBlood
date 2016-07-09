@@ -7,7 +7,6 @@ Router.onBeforeAction(function () {
     // if the user is not logged in, render the Login template
 
       this.render('login');
-      // console.log("User ID"+userId);
   } else {
     // otherwise don't hold up the rest of hooks or our route/action function
     // from running
@@ -18,6 +17,7 @@ Router.onBeforeAction(function () {
 
 Router.route('/home', function() {
   this.render('home');
+  Meteor.call("send_info");
 });
 
 

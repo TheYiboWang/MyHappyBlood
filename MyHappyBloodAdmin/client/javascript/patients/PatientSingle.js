@@ -18,23 +18,31 @@ Template.PatientSingle.helpers({
 Template.PatientSingle.helpers({
     "myChartData": function() {
 
-        SurveyHistory = _.pluck(Patients.find({}).fetch(), "SurveyHistory");
-        INRHistory = _.pluck(Patients.find({}).fetch(), "INRHistory");
+        var id = FlowRouter.getParam('id');
+        var Patient = Patients.findOne({_id: id});
+        console.log(Patient);
+
+        var surveyData = Patient.surveyData;
+        var INRhistory = Patient.INRhistory;
 
         var date1 = ['Dates1'];
         var date2 = ['Dates2'];
         var BleedOrNot = ['BleedOrNot'];
         var MedOrNot = ['MedOrNot'];
-        var mealPlan = ["MealPlan"];
+        var MealTimes = ["MealTimes"];
         var INR = ['INR'];
 
-        date1 = date1.concat(_.pluck(SurveyHistory[0], "date"));
-        date2 = date2.concat(_.pluck(INRHistory[0], "date"));
-        mealPlan = mealPlan.concat(_.pluck(SurveyHistory[0], "mealPlan"));
-        INR =  INR.concat(_.pluck(INRHistory[0], "INR"));
+        date1 = date1.concat(_.pluck(surveyData, "timestamp"));
+        console.log(date1);
+        date2 = date2.concat(_.pluck(INRhistory, "dot"));
+        console.log(date2);
+        MealTimes = MealTimes.concat(_.pluck(surveyData, "mealTimes"));
+        console.log(MealTimes);
+        INR =  INR.concat(_.pluck(INRhistory, "ts"));
+        console.log(INR);
 
 
-        temp = _.pluck(SurveyHistory[0], "BleedOrNot").map(function(bool){
+        temp = _.pluck(surveyData, "bleedOrNo").map(function(bool){
           if (bool){
             return 1.5;
           }
@@ -44,7 +52,7 @@ Template.PatientSingle.helpers({
         })
         BleedOrNot =  BleedOrNot.concat(temp);
 
-        temp = _.pluck(SurveyHistory[0], "MedOrNot").map(function(bool){
+        temp = _.pluck(surveyData, "medOrNo").map(function(bool){
           if (bool){
             return 1;
           }
@@ -64,7 +72,7 @@ Template.PatientSingle.helpers({
               columns: [
                   BleedOrNot,
                   MedOrNot,
-                  mealPlan,
+                  MealTimes,
                   INR,
                   date1,
                   date2,
@@ -73,12 +81,12 @@ Template.PatientSingle.helpers({
               xs: {
                 'BleedOrNot': 'Dates1',
                 'MedOrNot': 'Dates1',
-                'MealPlan': 'Dates1',
+                'MealTimes': 'Dates1',
                 'INR': 'Dates2'
               },
 
               types: {
-                MealPlan: 'spline',
+                MealTimes: 'spline',
                 BleedOrNot: 'bar',
                 MedOrNot: 'bar',
                 INR: 'spline',
@@ -105,4 +113,5 @@ Template.PatientSingle.helpers({
           }
         }
       }
+
 });
