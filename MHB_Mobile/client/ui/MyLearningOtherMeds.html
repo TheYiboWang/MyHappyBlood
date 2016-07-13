@@ -1,7 +1,9 @@
 <template name="mylearningOtherMeds">
 
-{{> header title="Learning: Other Meds"}}
-
+{{> header title="Learning: Anticoagulant"}}
+<div class="container" >
+<p class="bg-warning">Disclaimer: The medical information contained herein is intended for educational purposes only, and are not intended to replace medical advice from your doctor. Consult your doctor for further information or clarification on these topics.</p>
+</div>
 <!-- <table>
     <tr style="height: 40px; padding: 0px;">
       <td style="width: 80px; padding-left: 5px; padding-right: 5px; background-size: cover; background-image: url('img/Small-Tab_Clicked.png'); font-size: 10px; font-family: verdana">
@@ -42,41 +44,93 @@
     </div>
     <input type="range" min="15" max="35" style="width: 500px; height: 10px; border-radius: 6px"> <br><br> -->
 
-
-
-
-
 <div class="container" style="font-size: 18px"> <br>
   
   <ul class="nav nav-pills nav-adjust">
-    <li class="active"><a data-toggle="pill" href="#home">Apixaban</a></li>
-    <li><a data-toggle="pill" href="#menu1">Dabigatran</a></li>
-    <li><a data-toggle="pill" href="#menu2">Rivaroxaban</a></li>
+    <li class="active"><a href="#home"></a></li>
+    <li><a data-toggle="pill" href="#menu1">Apixaban</a></li>
+    <li><a data-toggle="pill" href="#menu2">Dabigatran</a></li>
+    <li><a data-toggle="pill" href="#menu3">Rivaroxaban</a></li>
   </ul>
   
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>About Apixaban (Eliquis)</h3>
-      <p>i) Apixaban reduces the risk of stroke and blood clots in people with a heart rhythm problem called non-valvular atrial fibrillation. <br><br>
-	ii)	With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke.  <br><br>
-	iii)	Take apixaban exactly as prescribed by your doctor. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. <br><br>
-	iv)	Avoid grapefruit and grapefruit juice while taking this medication. <br><br>
-	</p>
+      <h3> What is an oral anticoagulant? </h3>
+      <p> 
+        A blood thinner is a kind of drug called an anticoagulant. Anticoagulants help to prevent new blood clots from forming and help to keep existing blood clots from getting worse. 
+        <br><br>
+        Blood clots can put you at risk for heart attack, stroke, and other serious medical problems. 
+        <br><br>
+        Using aspirin, anti-inflammatory medicines such as ibuprofen or Motrin, platelet inhibitors, or other anticoagulants together may increase your risk for bleeding. 
+        <br><br>
+        <span style='font-weight:bold;'>Be sure to tell all of your doctors and dentists about all of the medications you are taking, including those you take without a prescription, vitamins or nutritional supplements (such as vitamin E or fish oil), and herbal medications (such as St. John’s Wort). </span>
+        <br><br>
+        Your doctors will obtain blood tests that measure your blood levels and check for signs of hidden bleeding or other conditions while you are on an anticoagulant drug.
+        <br><br>
+      </p>
     </div>
+
     <div id="menu1" class="tab-pane fade">
-      <h3>Dabigatran</h3>
-      <p>i)	Dabigatran will reduce the risk of stroke and blood clots in people with a 		serious heart rhythm problem called non-valvular atrial fibrillation. <br><br>
-		ii)	With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. <br><br>
-		iii) Take it exactly as prescribed by your doctor. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. <br><br>
-		iv)	You may need to stop using Dabigatran for several days before having surgery, including dental or medical procedures. Do not stop taking Dabigatran without first talking with your doctor. Your doctor will tell when to start taking Dabigatran again after your surgery or procedure. <br><br>
-		</p>
+      <h3>About Apixaban (Eliquis<sup>&reg;</sup>)</h3>
+      <p> <img src="img/Apixaban.png"> <br><br>
+        Apixaban comes as a tablet taken by mouth. This medicine will reduce the risk of stroke and blood clots in people with a serious heart rhythm problem called non-valvular atrial fibrillation.
+        <br><br>
+	       With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. 
+        <br><br>
+	       Your doctor will decide the correct dose and how long you should take it will depend on your medical conditions. 
+        <br><br>
+	       <span style='font-weight:bold;'>Do not stop talking apixaban without first talking with your doctor. Stopping apixaban may increase your risk of stroke. </span>
+        <br><br>
+        Take apixaban exactly as prescribed by your doctor. Take it twice a day with water, with or without food.
+        <br><br>
+        <span style='font-weight:bold;'>If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. <span style='color:red;'>Do not take a double dose.</span></span>
+        <br><br>
+        Avoid grapefruit and grapefruit juice while taking this medication.
+        <br><br>
+        Tell your doctor and pharmacist what other prescription and nonprescription medications, vitamins, herbal projects and nutritional supplements you are talking or plan to take. Some of your other medicines may affect the way apixaban works. 
+        <br><br>
+        <span style='font-weight:bold;'>Tell your doctor that you take this drug before having any surgery, medical or dental procedure. </span>
+        <br><br>
+        The most common and serious side effects are bleeding and skin rash or severe allergic reactions. Tell your doctor if you have any side effect that bothers you or that does not go away.
+        <br><br>
+	   </p>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h3>Rivaroxaban</h3>
-      <p>i)	Rivaroxaban (riv-are- ox-a-ban) will reduce the risk of stroke and blood clots in people with a serious heart rhythm problem called non-valvular atrial fibrillation and in people undergoing knee or hip replacement. <br><br>
-		ii)	With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. Rivaroxaban is also used after hip or knee replacement surgery to prevent thrombosis, a condition in which harmful blood clots form in the blood vessels of the legs.<br><br> 
-		iii) Do not stop taking rivaroxaban without first talking with your doctor. Take rivaroxaban exactly as prescribed by your doctor. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. <br><br>
-		iv)	Avoid grapefruit and grapefruit juice. <br><br>
+      <h3>Dabigatran (Pradaxa<sup>&reg;</sup>)</h3>
+      <p><img src="img/Dabigatran.png"> <br><br>
+        Dabigatran comes as a capsule taken by mouth. This medicine will reduce the risk of stroke and blood clots in people with a serious heart rhythm problem called non-valvular atrial fibrillation. 
+        <br><br>
+		    With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. 
+        <br><br>
+		    Your doctor will decide how long you should take dabigatran. <span style='font-weight:bold;'>Do not stop talking dabigatran without first talking with your doctor. </span> Stopping dabigatran may increase your risk of stroke.
+        <br><br>
+		    Swallow the capsules whole. <span style='color:red;'>Do not break, chew, or open capsules. This may increase the amount absorbed into your body and possibly cause serious reactions. </span>
+        <br><br>
+        Take it exactly as prescribed by your doctor. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. 
+        <br><br>
+        Tell all your healthcare providers (physicians, pharmacists, dentists, nurse practitioners) what medications you take including dabigatran. You may need to stop using Dabigatran for several days before having surgery, including dental or medical procedures. Do not stop taking Dabigatran without first talking with your doctor. Your doctor will tell when to start taking Dabigatran again after your surgery or procedure.
+        <br><br>
+        Common side effects of dabigatran include indigestion, upset stomach, or burning and stomach pain. Tell your doctor if you have any side effect that bothers you or that does not go away.
+
+		</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Rivaroxaban (Xarelto<sup>&reg;</sup>)</h3>
+      <p> <img src="img/Rivaroxaban.png"> <br><br>
+        Rivaroxaban comes as a tablet taken by mouth. This medicine will reduce the risk of stroke and blood clots in people with a serious heart rhythm problem called non-valvular atrial fibrillation and in people undergoing knee or hip replacement.
+        <br><br>
+		    With atrial fibrillation, part of the heart does not beat the way it should. This can cause blood clots to form, increasing your risk of a stroke. 
+        <br><br> 
+		    Rivaroxaban is also used after hip or knee replacement surgery to prevent thrombosis, a condition in which harmful blood clots form in the blood vessels of the legs. These blood clots can travel to the lungs and can become lodged in the blood vessels of the lungs, causing a condition called pulmonary embolism.
+        <br><br>
+		    Your doctor will decide appropriate dose and how long you should take rivaroxaban depends on the indications. Do not stop talking rivaroxaban without first talking with your doctor.  Stopping rivaroxaban may increase your risk of stroke or harmful clots forming in the blood vessels. If you have to stop taking rivaroxaban, your doctor may prescribe another blood thinner medicine to prevent a blood clot from forming.
+        <br><br>
+        Take rivaroxaban exactly as prescribed by your doctor. Take it with water, with or without food. If you miss a dose, take it as soon as you remember. If your next dose is less than 6 hours away, skip the missed dose. Do not take a double dose. 
+        <br><br>
+        <span style='font-weight:bold;'> Avoid grapefruit and grapefruit juice. </span>
+        <br><br>
+        Common side effects of rivaroxaban include upset stomach, throwing up, feeling dizzy and muscle spasm. Tell your doctor if you have any side effect that bothers you or that does not go away.
+        <br><br>
 </p>
     </div> 
   </div>
