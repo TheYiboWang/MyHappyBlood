@@ -80,5 +80,20 @@ AccountsTemplates.addFields([
         },
     ],
   },
+  {
+    _id: "medication",
+    type: "select",
+    displayName: "Medication    ",
+    select: [
+        {
+            text: "Warfarin",
+            value: "warfarin",
+        },
+        {
+            text: "NonWarfarin",
+            value: "nonWarfarin",
+        },
+    ],
+  },
   pwd
 ])
