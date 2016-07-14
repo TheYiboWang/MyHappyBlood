@@ -42,6 +42,6 @@ Template.mylearningSafety.events ({
 Template.mylearningSafety.rendered = function() {
 $('input').change(function() {
     var v = $(this).val();
-     $('#textsize').css('font-size', v + 'px');
+    $('[class="tab-content"]').css('font-size', v + 'px');
 });
 }
