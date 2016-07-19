@@ -1,10 +1,11 @@
 <template name="SideNav">
     <nav class="side-nav">
         <ul>
+          {{#if currentUser}}
             {{#each patients}}
                 <a href="/patients/{{_id}}"  style="color: #000000"><li>{{profile.firstname}}  {{profile.lastname}}</li></a>
             {{/each}}
-
+          {{/if}}
 
         </ul>
     </nav>

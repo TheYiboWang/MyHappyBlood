@@ -4,17 +4,8 @@ FlowRouter.route('/',{
 
     name: 'home',
     action() {
-        /**If there exists userId, then redirect to main page**/
-        if(Meteor.userId())
-        {
-            FlowRouter.go('main');
-        }
-        /**You can implement pageviews**/
-        // GAnalytics.pageview();
-
-        BlazeLayout.render('HomeLayout');
+        FlowRouter.go('main');
     }
-
 });
 
 /**** Routes to the main page.***/
@@ -22,11 +13,8 @@ FlowRouter.route('/main',{
 
     name: 'main',
     action() {
-
-        /**You can implement pageviews**/
-        // GAnalytics.pageview();
-
-        BlazeLayout.render('MainLayout',{main: 'Patients'});
+        Meteor.call("send_info");
+        BlazeLayout.render('MainLayout', {main: 'HomeLayout'});
     }
 
 });
@@ -35,6 +23,12 @@ FlowRouter.route('/main',{
 FlowRouter.route('/patients/:id', {
   name: 'single-patient',
   action () {
-    BlazeLayout.render('MainLayout',{main: 'PatientSingle'});
+    if (Meteor.userId())
+    {
+      BlazeLayout.render('MainLayout',{main: 'PatientSingle'});
+    }
+    else {
+      FlowRouter.go('main');
+    }
   }
 });

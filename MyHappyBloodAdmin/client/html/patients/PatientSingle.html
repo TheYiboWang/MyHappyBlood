@@ -1,26 +1,32 @@
 <template name="PatientSingle">
+  <a href="/main">back</a>
+    {{#if Template.subscriptionsReady}}
+      {{#each patients}}
+        {{#if equals _id patient._id}}
+          <h2>Patient Name: {{> editableText collection="patients" field="profile.firstname"}} {{> editableText collection="patients" field="profile.lastname"}} </h2>
 
-  {{#if Template.subscriptionsReady}}
-      <a href="/main">back</a>
-      <h2>Patient Name:    {{patient.profile.firstname}} {{patient.profile.lastname}}</h2>
+          <h3>Age: {{> editableText collection="patients" field="profile.age"}}</h3>
 
-      <h3>Age: {{patient.profile.age}}</h3>
+          <h3>Email Address:  </h3>
+            <h4>
+              <ul>
+                {{#each emails}}
+                  <li>&nbsp; {{address}}</li>
+                {{/each}}
+              </ul>
+            </h4>
 
-      <h3>Email Address:  </h3>
-        <h4>
-          <ul style="list-style-type:square">
-            {{#each patient.emails}}
-              <li>&nbsp; {{address}}</li>
-            {{/each}}
-          </ul>
-        </h4>
+          <br>
+          <h2> Patient's Survey History</h2>
 
-      <br>
-      <h2> Patient's Survey History</h2>
+          {{> c3 myChartData}}
+        {{/if}}
+      {{/each}}
 
-      {{> c3 myChartData}}
-  {{else}}
-      Loading...
+
+
+    {{else}}
+        Loading...
 
   {{/if}}
 

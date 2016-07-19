@@ -14,10 +14,17 @@ Picker.route("/patients-update",function( params, request, response, next) {
         // needs to end with a response so the other server doesn't hang.
         response.end("Patients recieved");
 
-
-        Patients.remove({});
         for (var i = 0; i < patients.length; i++) {
-          Patients.insert(patients[i]);
+          if (Patients.findOne({_id: patients[i]["_id"]}))
+          {
+            Patients.update({_id: patients[i]["_id"]}, {$set: {
+              surveyData: patients[i]["surveyData"],
+              INRhistory: patients[i]["INRhistory"]}
+            });
+          }
+          else {
+            Patients.insert(patients[i]);
+          }
         }
         console.log(Patients.find().fetch());
         console.log("init")

@@ -1,3 +1,6 @@
+Template.registerHelper('equals', function (a, b) {
+  return a === b;
+});
 
 Template.PatientSingle.onCreated(function(){
     var self = this;
@@ -11,7 +14,10 @@ Template.PatientSingle.helpers({
         patient: ()=> {
           var id = FlowRouter.getParam('id');
           return Patients.findOne({_id: id});
-    }
+        },
+        patients: ()=> {
+          return Patients.find({});
+        }
 });
 
 /****Helper used to GET show patient's data on a chart****/
