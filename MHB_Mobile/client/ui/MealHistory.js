@@ -20,30 +20,48 @@ Template.charts2.helpers({
         res_y = res_y.filter(function(n){ return (n != undefined && n!="") });
         yData = yData.concat(res_y);
         console.log("yData", yData);
+        var d = 1;
 
        // var chart = c3.generate({
         return {
-                data: {
-                        x: 'x',
-                        xFormat: '%x', // 'xFormat' can be used as custom format of 'x'
-                        columns: [
-                                    xData,
-                                    yData
-                                 ],
-                        labels: true
-                      },
+          size: {
+            height: 480,
+          },
+          data: {
+            x: 'x',
+            
+            columns: [
+              xData,
+              yData
+            ],
+            labels: true
+          },
 
-                      axis: {
-                          x: {
-                              type: 'timeseries',
-                              tick: {
-                                      rotate: 90,
-                                      format: '%x'
-                                    }
-                               }
-                             },
+          axis: {
+            x: {
+              type: 'timeseries',
+              tick: {
+                rotate: 90,
+                format: '%x'
+              }
+            },
 
-               }
+            y: {
+
+              max:5,
+              min:0,
+              padding: {top:1, bottom:1},
+              label: {
+                text: 'Number of Meals',
+                position:'outer-middle'
+              },
+              tick: {
+                // count does not work here !
+              },
+            }
+          },
+
+        }
 
     }
 });

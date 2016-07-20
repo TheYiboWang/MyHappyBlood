@@ -26,29 +26,28 @@ Template.charts.helpers({
         var tl = 2;
        // var chart = c3.generate({
         return {
-
           size: {
-             height: 640,
+             height: 480,
           },
+
           data: {
-                  x: 'x',
-                  columns: [
-                              xData,
+            x: 'x',
+            columns: [
+                        xData,
+                        yData
+                     ],
+            labels: true,
+          },
 
-                              yData
-                           ],
-                  labels: true,
-                },
+          axis: {
+              x: {
+                  type: 'timeseries',
+                  tick: {
 
-                  axis: {
-                      x: {
-                          type: 'timeseries',
-                          tick: {
-                              count: 10,
-                              rotate: 75,
-                              format: function(x) { return moment(x).format('YYYY-MM-DD')}
-                          }
-                      },
+                      rotate: 90,
+                      format: function(x) { return moment(x).format('YYYY-MM-DD')}
+                  }
+              },
 
                       y: {
                         max:10,
@@ -60,6 +59,12 @@ Template.charts.helpers({
                         }
                       }
                     },
+
+                    regions: [
+                    {axis: 'y', start: 0, end: tl, class: 'regionY1'},
+                    {axis: 'y', start: tl, end: th, class: 'regionY3'},
+                    {axis: 'y', start: th, end: 10, class: 'regionY2'},
+                    ],
 
               grid: {
                 y: {

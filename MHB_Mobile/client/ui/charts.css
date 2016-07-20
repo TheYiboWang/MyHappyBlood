@@ -14,5 +14,15 @@
 }
 
 .c3-axis {
-	font: 18px sans-serif;
+	font: 14px sans-serif;
+}
+
+.c3-region.regionY1{
+  fill: yellow;
+}
+.c3-region.regionY2{
+  fill: #ff0000;
+}
+.c3-region.regionY3{
+  fill: green;
 }

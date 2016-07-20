@@ -1,10 +1,13 @@
 // surveypage.js
 
 Template.survey.rendered=function() {
-	document.getElementById("date").innerHTML = "Date:" + Date();
+	document.getElementById("date").innerHTML = "Date: <br>" + Date();
+	$('[class="q2"]').hide();
+	$('[class="q3"]').hide();
 	$("#txtarea").hide();
 	$('[name="selectWhy"]').hide();
 	$('[alt="saftey-tip_all"]').hide();
+	$('[name="submitSurvey"]').hide();
 
 	 $('[name="yesNoBox1"]').change(function() {
   		var val = $('[name="yesNoBox1"]:checked').val();
@@ -32,7 +35,6 @@ Template.survey.rendered=function() {
 	 $('[name="yesNoBox2"]').change(function() {
 	 	console.log('aaaaa');
 	 	var val = $('[name="yesNoBox2"]:checked').val();
-	 	  		console.log(val);
 	 	if (val == "yes") {
 	 		$('[alt="saftey-tip_all"]').show();
 	 	} else {
@@ -42,6 +44,35 @@ Template.survey.rendered=function() {
 }
 
 Template.survey.events({
+	'click li[class=previous]': function(event) {
+		if ($('[class="q1"]').is(":visible")) {
+			// do nothing here.
+		}
+		if ($('[class="q2"]').is(":visible")) {
+			$('[class="q2"]').hide();
+			$('[class="q1"]').show();
+		}
+		if ($('[class="q3"]').is(":visible")) {
+			$('[class="q3"]').hide();
+			$('[class="q2"]').show();
+			$('[name="submitSurvey"]').hide();
+		}
+	},
+
+	'click li[class=next]': function(event) {
+		if ($('[class="q2"]').is(":visible")) {
+			$('[class="q2"]').hide();
+			$('[class="q3"]').show();
+			$('[name="submitSurvey"]').show();
+		}
+		if ($('[class="q1"]').is(":visible")) {
+			$('[class="q1"]').hide();
+			$('[class="q2"]').show();
+		}
+
+
+	},
+
 	'click input[type=submit]': function(event){
 		event.preventDefault();
 
@@ -54,6 +85,7 @@ Template.survey.events({
 		var meal2 = document.getElementById("meal2");
 		var meal3 = document.getElementById("meal3");
 		var meal4 = document.getElementById("meal4+");
+
 
 		if(medyes.checked) {
 			var medbool = true;
@@ -82,6 +114,9 @@ Template.survey.events({
 		else if (meal4.checked) {
 			var meal = 4;
 		}
+		
+		var reasonchoose = document.getElementById("selectWhy").value;
+		var reasontext = document.getElementById("txtarea").value;
 
 		console.log(meal);
 		console.log(medbool);
@@ -89,6 +124,8 @@ Template.survey.events({
 		const new_survey = {
 			timestamp: moment(new Date()).format('YYYY-MM-DD'),
 			medOrNo: medbool,
+			reason1: reasonchoose,
+			reason2: reasontext,
 			bleedOrNo: bleedbool,
 			mealTimes: meal,
 			createdBy: currentUserId
