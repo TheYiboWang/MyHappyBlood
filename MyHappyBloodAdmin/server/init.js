@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { HTTP } from 'meteor/http';
 
 var bodyParser = Meteor.npmRequire( 'body-parser' );
 
@@ -30,8 +31,30 @@ Picker.route("/patients-update",function( params, request, response, next) {
         console.log("init")
 });
 
+function send_info() {
+        var PatientsInfo = Patients.find().fetch();
+        console.log("sending Patients Information");
+
+        // This url serves as a web API. You can choose your own path to form a protocol.
+        // Notice that I use JSON as content type, you can use other content type according to your need.
+        // Also, make sure to run the receiver app on port 3002.
+        var url = "http://localhost:3000/patients-update";
+        var result = HTTP.post(url, {
+                        headers: {
+                                "content-type": "application/json; charset=UTF-8"
+                        },
+                        content: JSON.stringify(PatientsInfo),
+                });
+        console.log("Patients Information sended");
+}
+
+const c_Methods = {
+        send_info: function(arg) {
+                send_info();
+        }
+}
+
 Meteor.startup(() => {
     // code to run on server at startup
-
-    // console.log(Meteor.settings.public.ga.account);
+    Meteor.methods(c_Methods);
 });

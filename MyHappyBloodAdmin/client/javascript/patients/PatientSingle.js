@@ -17,6 +17,19 @@ Template.PatientSingle.helpers({
         },
         patients: ()=> {
           return Patients.find({});
+        },
+
+        MedicationList: ()=> {
+          var id = FlowRouter.getParam('id');
+          var Patient = Patients.findOne({_id: id});
+          var MedicationType = Patient.profile.medication;
+          if (MedicationType == "Warfarin")
+          {
+            return ["Warfarin", "Non Warfarin"];
+          }
+          else {
+            return ["Non Warfarin", "Warfarin"];
+          }
         }
 });
 
@@ -26,7 +39,7 @@ Template.PatientSingle.helpers({
 
         var id = FlowRouter.getParam('id');
         var Patient = Patients.findOne({_id: id});
-        console.log(Patient);
+        console.log(Patient.profile.medication);
 
         var surveyData = Patient.surveyData;
         var INRhistory = Patient.INRhistory;
@@ -120,4 +133,13 @@ Template.PatientSingle.helpers({
         }
       }
 
+});
+
+
+Template.PatientSingle.events({
+    "change #medication-select": function (event, template) {
+        var medication = $(event.currentTarget).val();
+        var id = FlowRouter.getParam('id');
+        Patients.update({_id: id}, {$set: {"profile.medication": medication}});
+    }
 });

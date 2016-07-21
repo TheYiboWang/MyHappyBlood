@@ -16,6 +16,12 @@
               </ul>
             </h4>
 
+          <h3>Medication Type: <select id="medication-select"> {{#each MedicationList}}
+                                            <option value="{{this}}">{{this}}</option>
+                                        {{/each}}
+                               </select>
+          </h3>
+
           <br>
           <h2> Patient's Survey History</h2>
 

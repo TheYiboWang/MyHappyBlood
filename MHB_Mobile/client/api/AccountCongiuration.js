@@ -87,11 +87,11 @@ AccountsTemplates.addFields([
     select: [
         {
             text: "Warfarin",
-            value: "warfarin",
+            value: "Warfarin",
         },
         {
-            text: "NonWarfarin",
-            value: "nonWarfarin",
+            text: "Non Warfarin",
+            value: "Non Warfarin",
         },
     ],
   },
