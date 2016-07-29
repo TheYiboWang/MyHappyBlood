@@ -65,7 +65,9 @@ Router.route('/safetytips/', function() {
 Router.route('/setupPushReminder/', function() {
   this.render('setupPushReminder');
 });
-
+Router.route('/addReminder/', function() {
+  this.render('addReminder');
+});
 
 // Router.route('mylearningWarfarin', {
 //   // get parameter via this.params

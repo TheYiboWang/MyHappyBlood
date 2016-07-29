@@ -22,7 +22,7 @@ Template.charts.helpers({
         yData = yData.concat(res_y);
 
 
-        var th = 8;
+        var th = 5;
         var tl = 2;
        // var chart = c3.generate({
         return {

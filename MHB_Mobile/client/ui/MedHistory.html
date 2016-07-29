@@ -1,14 +1,34 @@
 <template name="medhistory">
 {{>header title="Progress: Med History"}}
+	<div class="container">
 
-	<div id='calendar'></div> <br>
+		<div id='calendar'></div> <br>
 
-	<ul>
-	<li style="color:green; font-size: 18px;"> Took Medication </li> <br>
+<!-- 		<table id="starTable">
+			<tr> -->
+				<td> <img src="img/Star.png" style="width:15%; height:15%;" id="star1"> </td>
+				<td> <img src="img/Star.png" style="width:15%; height:15%;" id="star2"> </td>
+				<td> <img src="img/Star.png" style="width:15%; height:15%;" id="star3"> </td>
+				<td> <img src="img/Star.png" style="width:15%; height:15%;" id="star4"> </td>
+<!-- 			</tr>
+		</table> -->
+		<p id="calculatePercentage" style="color:green; font-size: 20px;"> </p>
 
-	<li style="color:red; font-size:18px;"> Did NOT Take Medication </li>
-	</ul>
+		<br><br> <br><br>
+		<ul id="tookOrNot">
+			<li style="color:green; font-size: 15px;"> Green Color: Took Medication </li> <br>
+			<li style="color:red; font-size:15px;">Red Color: Did NOT Take Medication </li>
+		</ul>
 
+		<div style="position:fixed; left:200px; bottom: 100px;">
+			
+		</div>
+
+	</div>
+
+	<div style="position:fixed; top: 200px;" align="center" id="congrats">
+		<img src="img/Congrats.png" style="width: 80%; height:80%">
+	</div>
 
 	<br><br><br><br>
     <div id="footer">

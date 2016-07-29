@@ -1,7 +1,31 @@
 
 <template name="setupPushReminder">
-	{{> navbar}}
-	<p style="font-size:20px">
+
+	{{> header title="Medication: Reminders"}}
+
+	<div class="container">
+	<a href="/addReminder">
+	<img src="img/Add.png" alt="Add.png" style="height:30%; width:30%;">
+	</a> <br>
+	<table style="width:100%">
+		<tr>
+			<td>
+				read data from database.......
+			</td>
+			<td align="right">
+				<img src="img/Delete.png" alt="Delete.png" style="height: 30%; width:30%">
+			</td>
+
+
+		</tr>	
+
+
+
+	</table>
+
+
+	</div>
+<!-- 	<p style="font-size:20px">
 	<div class="container">
 		{{#if currentUser}}
 		Enter your desired notification time in the following format: hh:mm (24 hours, i.e. 17:00 for 5:00 p.m.). 
@@ -31,7 +55,11 @@
 		{{/if}}
 	</div>
 	<br />
-	</p>
+	</p> -->
+	    <br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
 </template>
 
 <template name="row">

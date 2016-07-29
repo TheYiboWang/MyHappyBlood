@@ -4,13 +4,18 @@
 /* Special styling for WebKit/Blink */
 /**/
 .nav-tabs{
- 
-background-color:#C8D3DB;
+/*color: white;*/
+/*background-color:#C8D3DB;*/
+
  
 }
 .nav-tabs > li > a{
- 
+color: black;
 border-radius: 5px;
+background-image: url("img/Small-Tab_Unclicked.png");
+background-size: auto ;
+background-repeat: no-repeat;
+background-position: center;
  
 }
 
@@ -19,10 +24,11 @@ border-radius: 5px;
 .nav-tabs > li.active > a:focus,
  
 .nav-tabs > li.active > a:hover{
+background-image: url("img/Small-Tab_Clicked.png");
+background-position: center;
+/*background-color: #3EB0F7 !important;*/
  
-background-color: #3EB0F7 !important;
- 
-color:black;
+color:white;
  
 }
 
@@ -30,7 +36,7 @@ input[type=range] {
 	position: fixed;
     left: 0;
     right: 0;
-    bottom: 85px;
+    bottom: 66px;
     height: 65px;
     
   -webkit-appearance: none;

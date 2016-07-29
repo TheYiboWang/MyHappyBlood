@@ -2,8 +2,64 @@
 
 
 Template.medhistory.rendered = function () {
+    $("#star1").hide();
+    $("#star2").hide();
+    $("#star3").hide();
+    $("#star4").hide();
+
 	var currentUserId = Meteor.userId();
 	var source = Meteor.users.findOne({_id: currentUserId}).surveyData;
+
+    var ii; 
+    var len = source.length;
+
+    // check the first 7 days.
+    if (len >= 7) {
+        $("#star1").show();
+        for(ii = 0; ii < 7; ii++) {
+            var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
+            if (source[len - 1 - ii].timestamp != checkDay) {
+                $("#star1").hide();
+                break;
+            }
+        }
+    };
+
+    if (len >= 14) {
+        $("#star2").show();
+        for(ii = 7; ii < 14; ii++) {
+            var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
+            if (source[len - 1 - ii].timestamp != checkDay) {
+                $("#star2").hide();
+                break;
+            }
+        }
+    };
+
+    if (len >= 21) {
+        $("#star3").show();
+        for(ii = 14; ii < 21; ii++) {
+            var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
+            if (source[len - 1 - ii].timestamp != checkDay) {
+                $("#star3").hide();
+                break;
+            }
+        }
+    };
+
+    if (len >= 28) {
+        $("#star4").show();
+        for(ii = 21; ii < 28; ii++) {
+            var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
+            if (source[len - 1 - ii].timestamp != checkDay) {
+                $("#star4").hide();
+                break;
+            }
+        }
+    };
+
+
+
 	var i; 
     var source1 = [];
     var source2 = [];
@@ -29,6 +85,16 @@ Template.medhistory.rendered = function () {
 
 	console.log(source1);
     console.log(source2);
+
+    /*
+     calculate the percentage
+    */
+    var startDate  = source[0].timestamp;
+    var currentDate = moment(new Date()).format('YYYY-MM-DD');
+    var diff =  Math.floor(( Date.parse(currentDate) - Date.parse(startDate) ) / 86400000);
+    var percentage =   (source1.length - 3) * 100 /  diff;
+    document.getElementById("calculatePercentage").innerHTML = " Took percentage is " + percentage + "%";
+
 
 	$('#calendar').fullCalendar({
     // defaultDate: '2014-11-10',
@@ -64,4 +130,26 @@ Template.medhistory.rendered = function () {
     //     Events.find();
     //     fc.fullCalendar('refetchEvents');
     // });
+    $("#congrats").hide();
 };
+
+Template.medhistory.events({
+
+    'click img[id=star1]': function(event) {
+        $("#congrats").show();
+        $("#calendar").hide();
+        $("#tookOrNot").hide();
+        $("#star1").hide(); $("#star2").hide(); $("#star3").hide(); $("#star4").hide();
+        $("#calculatePercentage").hide();
+    },
+
+    'click div[id=congrats]': function(event) {
+        $("#congrats").hide();
+        $("#calendar").show();
+        $("#tookOrNot").show();
+         $("#star1").show(); $("#star2").show(); $("#star3").show(); $("#star4").show();
+        $("#calculatePercentage").show();
+    },
+
+})
+
