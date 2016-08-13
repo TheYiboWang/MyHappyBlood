@@ -13,7 +13,7 @@ Template.medhistory.rendered = function () {
     var ii; 
     var len = source.length;
 
-    // check the first 7 days.
+    //check the first 7 days.
     if (len >= 7) {
         $("#star1").show();
         for(ii = 0; ii < 7; ii++) {
@@ -93,7 +93,8 @@ Template.medhistory.rendered = function () {
     var currentDate = moment(new Date()).format('YYYY-MM-DD');
     var diff =  Math.floor(( Date.parse(currentDate) - Date.parse(startDate) ) / 86400000);
     var percentage =   (source1.length - 3) * 100 /  diff;
-    document.getElementById("calculatePercentage").innerHTML = " Took percentage is " + percentage + "%";
+    percentage = Math.round(percentage * 10) / 10;
+    document.getElementById("calculatePercentage").innerHTML = " Total adherence is " + percentage + "%";
 
 
 	$('#calendar').fullCalendar({
@@ -144,11 +145,14 @@ Template.medhistory.events({
     },
 
     'click div[id=congrats]': function(event) {
+
         $("#congrats").hide();
-        $("#calendar").show();
-        $("#tookOrNot").show();
-         $("#star1").show(); $("#star2").show(); $("#star3").show(); $("#star4").show();
-        $("#calculatePercentage").show();
+        Router.go('/medhistory');
+        // $("#calendar").show();
+        // $("#tookOrNot").show();
+
+         // $("#star1").show(); $("#star2").show(); $("#star3").show(); $("#star4").show();
+        // $("#calculatePercentage").show();
     },
 
 })
