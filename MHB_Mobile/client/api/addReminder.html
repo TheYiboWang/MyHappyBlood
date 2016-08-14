@@ -3,7 +3,7 @@
 	<div class="container">
 
 	<form method="post" style="font-size: 20px; font-family: verdana">
-	    <div id="reminderQ1">
+	    <div id="reminderQ1" >
 		    1. Which medication are you taking? <br>
 		    <input type="radio" name="chooseMed" value="warfarin" id="chooseMedWarfarin" > Warfarin <br>
 		    <input type="radio" name="chooseMed" value="apixaban" id="chooseMedApixaban"> Apixaban(Eliquis) <br>
@@ -39,11 +39,7 @@
 	    <div class="form-inline">
 	  
 	    	4. What time do you want to set your reminder? (Enter time) <br>
-	    	<select class="form-control" id="selectAmPm">
-			  <option value=""> AM/PM </option>
-			  <option value="AM">AM</option> 
-			  <option value="PM">PM</option>
-			</select>
+
 
 			<select class="form-control" id="selectHour">
 			  <option value=""> Hour </option>
@@ -67,6 +63,12 @@
 			  <option value="15">15</option>
 			  <option value="30">30</option>
 			  <option value="45">45</option>
+			</select>
+
+			<select class="form-control" id="selectAmPm">
+			  <option value=""> AM/PM </option>
+			  <option value="AM">AM</option> 
+			  <option value="PM">PM</option>
 			</select>
 
 	    

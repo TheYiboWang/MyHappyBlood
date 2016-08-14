@@ -12,6 +12,7 @@ Template.medhistory.rendered = function () {
 
     var ii; 
     var len = source.length;
+    // console.log(len);
 
     //check the first 7 days.
     if (len >= 7) {
@@ -27,9 +28,20 @@ Template.medhistory.rendered = function () {
 
     if (len >= 14) {
         $("#star2").show();
+        var today = moment(new Date()).format('YYYY-MM-DD');
+        var lastSubmitDay = source[len - 1].timestamp;
+        var diff =  Math.floor(( Date.parse(today) - Date.parse(lastSubmitDay)) / 86400000);
+
+        // console.log(today);
+        // console.log(lastSubmitDay);
+        // console.log(diff);
+
         for(ii = 7; ii < 14; ii++) {
             var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
-            if (source[len - 1 - ii].timestamp != checkDay) {
+            // console.log(source[len - 1 - ii + diff].timestamp);
+            // console.log(checkDay);
+            // console.log(source[len - 1 - ii + diff].timestamp != checkDay);
+            if (source[len - 1 - ii + diff].timestamp != checkDay) {
                 $("#star2").hide();
                 break;
             }
@@ -38,9 +50,15 @@ Template.medhistory.rendered = function () {
 
     if (len >= 21) {
         $("#star3").show();
+        var today = moment(new Date()).format('YYYY-MM-DD');
+        var lastSubmitDay = source[len - 1].timestamp;
+        var diff =  Math.floor(( Date.parse(today) - Date.parse(lastSubmitDay)) / 86400000);
         for(ii = 14; ii < 21; ii++) {
             var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
-            if (source[len - 1 - ii].timestamp != checkDay) {
+            // console.log(source[len - 1 - ii + diff].timestamp);
+            // console.log(checkDay);
+            // console.log(source[len - 1 - ii + diff].timestamp != checkDay);
+            if (source[len - 1 - ii + diff].timestamp != checkDay) {
                 $("#star3").hide();
                 break;
             }
@@ -49,15 +67,28 @@ Template.medhistory.rendered = function () {
 
     if (len >= 28) {
         $("#star4").show();
+        var today = moment(new Date()).format('YYYY-MM-DD');
+        var lastSubmitDay = source[len - 1].timestamp;
+        var diff =  Math.floor(( Date.parse(today) - Date.parse(lastSubmitDay)) / 86400000);
         for(ii = 21; ii < 28; ii++) {
             var checkDay = moment(new Date()).subtract(ii, 'days').format('YYYY-MM-DD');
-            if (source[len - 1 - ii].timestamp != checkDay) {
+            if (source[len - 1 - ii + diff].timestamp != checkDay) {
                 $("#star4").hide();
                 break;
             }
         }
     };
 
+    /*
+        count number of stars
+    */
+    var count = 0;
+    if ($('#star1').is(":visible")) count++;
+    if ($('#star2').is(":visible")) count++;
+    if ($('#star3').is(":visible")) count++;
+    if ($('#star4').is(":visible")) count++;
+    document.getElementById("numberOfStars").innerHTML 
+        = "You have "  + count +  " / 4 stars based on past 4 weeks."// show emicon  
 
 
 	var i; 
@@ -140,14 +171,37 @@ Template.medhistory.events({
         $("#congrats").show();
         $("#calendar").hide();
         $("#tookOrNot").hide();
-        $("#star1").hide(); $("#star2").hide(); $("#star3").hide(); $("#star4").hide();
+        $("#calculatePercentage").hide();
+    },
+
+    'click img[id=star2]': function(event) {
+        $("#congrats").show();
+        $("#calendar").hide();
+        $("#tookOrNot").hide();
+        $("#calculatePercentage").hide();
+    },
+
+    'click img[id=star3]': function(event) {
+        $("#congrats").show();
+        $("#calendar").hide();
+        $("#tookOrNot").hide();
+        $("#calculatePercentage").hide();
+    },
+
+    'click img[id=star4]': function(event) {
+        $("#congrats").show();
+        $("#calendar").hide();
+        $("#tookOrNot").hide();
         $("#calculatePercentage").hide();
     },
 
     'click div[id=congrats]': function(event) {
-
         $("#congrats").hide();
-        Router.go('/medhistory');
+        $("#calendar").show();
+        $("#tookOrNot").show();
+        $("#calculatePercentage").show();
+
+        // Router.go('/medhistory');
         // $("#calendar").show();
         // $("#tookOrNot").show();
 
