@@ -18,6 +18,7 @@ if (Meteor.isClient) {
 
 
   Meteor.subscribe("userData");
+  Meteor.subscribe("PastReminders");
 
   Template.loginButtons.rendered = function(){
       Accounts._loginButtonsSession.set('dropdownVisible', true);

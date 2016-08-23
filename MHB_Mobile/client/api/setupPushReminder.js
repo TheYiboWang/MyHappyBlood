@@ -1,10 +1,10 @@
-Template.row.helpers({
+Template.setupPushReminder.helpers({
 	pastReminders: function () {
-		var query = {};
-		if (Session.get("checked")) {
-			query = {receivedAt: {$exists: !Session.get("checked")}};
-		}
-		return PastReminders.find(query);
+		// var query = {};
+		// if (Session.get("checked")) {
+		// 	query = {receivedAt: {$exists: !Session.get("checked")}};
+		// }
+		return PastReminders.find();
 	}
 });
 
@@ -15,8 +15,8 @@ Template.setupPushReminder.events({
 	},
 	"click input[type=checkbox]": function () {
 		Session.set("checked", $("input[type=checkbox]").is(":checked"));
-	}, 
-	
+	},
+
 	'submit form': function(event){
     event.preventDefault();
     var documentId = this._id;

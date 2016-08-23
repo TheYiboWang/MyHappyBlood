@@ -5,17 +5,17 @@
 	<form method="post" style="font-size: 20px; font-family: verdana">
 	    <div id="reminderQ1" >
 		    1. Which medication are you taking? <br>
-		    <input type="radio" name="chooseMed" value="warfarin" id="chooseMedWarfarin" > Warfarin <br>
-		    <input type="radio" name="chooseMed" value="apixaban" id="chooseMedApixaban"> Apixaban(Eliquis) <br>
-		    <input type="radio" name="chooseMed" value="dabigatran" id="chooseMedDabigatran"> Dabigatran (Pradaxa)<br>
-		    <input type="radio" name="chooseMed" value="rivaroxaban" id="chooseMedRivaroxaban"> Rivaroxaban (Xarelto) <br>
+		    <input type="radio" name="chooseMed" value="Warfarin" id="chooseMedWarfarin" > Warfarin <br>
+		    <input type="radio" name="chooseMed" value="Apixaban" id="chooseMedApixaban"> Apixaban(Eliquis) <br>
+		    <input type="radio" name="chooseMed" value="Dabigatran" id="chooseMedDabigatran"> Dabigatran (Pradaxa)<br>
+		    <input type="radio" name="chooseMed" value="Rivaroxaban" id="chooseMedRivaroxaban"> Rivaroxaban (Xarelto) <br>
 	    </div>
 
 	    <br>
 
 	    <div id="reminderQ2">
 		    2. What dose is your medication? (Enter number) <br>
-		    <input type="number" id="medDose" style="font-size: 10pt"> <strong>mg</strong>
+		    <input type="number" name="medDose" style="font-size: 10pt"> <strong>mg</strong>
 	    </div>
 
 	    <br>
@@ -23,27 +23,27 @@
 	    <div class="form-inline">
 	    <div >
 	    3. What days do you take the medication? (Select all that apply) <br>
-				<input type="checkbox" name="reminderDays" value="Sunday"> Sun   
-				<input type="checkbox" name="reminderDays" value="Monday"> Mon   
-				<input type="checkbox" name="reminderDays" value="Tuesday"> Tue   
-				<input type="checkbox" name="reminderDays" value="Wednesday"> Wed   
-				<input type="checkbox" name="reminderDays" value="Thursday"> Thu   
-				<input type="checkbox" name="reminderDays" value="Friday"> Fri   
-				<input type="checkbox" name="reminderDays" value="Saturday"> Sat   
-	    </div> 
+				<input type="checkbox" name="reminderDays" value="Sunday"> Sun
+				<input type="checkbox" name="reminderDays" value="Monday"> Mon
+				<input type="checkbox" name="reminderDays" value="Tuesday"> Tue
+				<input type="checkbox" name="reminderDays" value="Wednesday"> Wed
+				<input type="checkbox" name="reminderDays" value="Thursday"> Thu
+				<input type="checkbox" name="reminderDays" value="Friday"> Fri
+				<input type="checkbox" name="reminderDays" value="Saturday"> Sat
+	    </div>
 
 	    <br>
-	    
+
 	    </div>
 
 	    <div class="form-inline">
-	  
+
 	    	4. What time do you want to set your reminder? (Enter time) <br>
 
 
-			<select class="form-control" id="selectHour">
-			  <option value=""> Hour </option>
-			  <option value="00">01</option> 
+			<select class="form-control" name="selectHour" id="selectHour">
+			  <option disabled="disabled"> Hour </option>
+			  <option selected="true" value="00">01</option>
 			  <option value="02">02</option>
 			  <option value="03">03</option>
 			  <option value="04">04</option>
@@ -57,34 +57,29 @@
 			  <option value="12">12</option>
 			</select>
 
-			<select class="form-control" id="selectMinute">
-			  <option value=""> Minute </option>
-			  <option value="00">00</option> 
+			<select class="form-control" name="selectMinute" id="selectMinute">
+			  <option disabled="disabled"> Minute </option>
+			  <option selected="true" value="00">00</option>
 			  <option value="15">15</option>
 			  <option value="30">30</option>
 			  <option value="45">45</option>
 			</select>
 
-			<select class="form-control" id="selectAmPm">
-			  <option value=""> AM/PM </option>
-			  <option value="AM">AM</option> 
+			<select class="form-control" name="selectAmPm" id="selectAmPm">
+			  <option disabled="disabled"> AM/PM </option>
+			  <option selected="true"  value="AM">AM</option>
 			  <option value="PM">PM</option>
 			</select>
-
-	    
 	    </div>
 
-  	</form>
 
-
-
-
-  		<br>
-	    <div style="text-align: center">
-	    <input type="submit" name="submitSurvey" value="Submit" 
+			<br>
+			<div style="text-align: center">
+	    <input type="submit" name="submitSurvey" value="Submit"
 	      style="width:200px; height:70px; font-size: 25px; background-color: deepskyblue">
 	    </div>
 
+  	</form>
 
 	</div>
 
@@ -101,7 +96,7 @@
 
 <!-- <div class="form-inline">
   <div class="form-group col-lg-12">
-    <label>Birthday</label><br>  
+    <label>Birthday</label><br>
     <select class="form-control" id="sel1">
       <option value="jan">Jan</option>
       <option value="jan">Feb</option>

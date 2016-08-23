@@ -3,71 +3,42 @@
 
 	{{> header title="Medication: Reminders"}}
 
-	<div class="container">
-	<a href="/addReminder">
-	<img src="img/Add.png" alt="Add.png" style="height:30%; width:30%;">
-	</a> <br>
-	<table style="width:100%">
-		<tr>
-			<td>
-				read data from database.......
-			</td>
-			<td align="right">
-				<img src="img/Delete.png" alt="Delete.png" style="height: 30%; width:30%">
-			</td>
-
-
-		</tr>	
-
-
-
-	</table>
-
-
+	<div>
+		<a href="/addReminder">
+			<img src="img/Add.png" alt="Add.png" style="height:30%; width:30%;">
+		</a>
+		<br><br>
 	</div>
-<!-- 	<p style="font-size:20px">
+
 	<div class="container">
-		{{#if currentUser}}
-		Enter your desired notification time in the following format: hh:mm (24 hours, i.e. 17:00 for 5:00 p.m.). 
-    	<form>
-        <input type="text" name="notificationTime" id="n1">
-        <input type="submit" value="Set Push Notification">
-    	</form>
-		<button id="removeHistory">Remove History</button>
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" value="">hide received notifications
-			</label>
-		</div>
-		<hr />
-		<table>
-			<thead>
+		<table style="width:100%">
+
+			<tr>
+				<th>Medicine</th>
+				<th>Dose(mg)</th>
+				<th>Day</th>
+				<th>Reminder</th>
+
+			</tr>
+
+
+			{{#each pastReminders}}
 				<tr>
-					<td>Notification #</td>
-					<td>Added at</td>
-					<td>Received at</td>
+					<td>{{medicine}}</td>
+					<td>{{dose}}</td>
+					<p><td>{{#each days}} {{this}}<br> {{/each}}</td></p>
+					<td>{{selectHour}}:{{selectMinute}} {{selectAmPm}}</td>
+					<td><img src="img/Delete.png" alt="Delete.png" style="height: 20%; width:20%"></td>
 				</tr>
-			</thead>
-			{{> row}}
+			{{/each}}
+
 		</table>
-		{{else}}
-		<p>You need to be logged in</p>
-		{{/if}}
-	</div>
-	<br />
-	</p> -->
-	    <br><br><br><br>
+
+		</div>
+
+	  <br><br><br><br>
+
     <div id="footer">
       {{> navbar}}
     </div>
-</template>
-
-<template name="row">
-	{{#each pastReminders}}
-		<tr>
-			<td>{{badge}}</td>
-			<td>{{addedAt}}</td>
-			<td>{{receivedAt}}</td>
-		</tr>
-	{{/each}}
 </template>
