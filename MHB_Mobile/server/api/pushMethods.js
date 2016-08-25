@@ -1,42 +1,49 @@
-Meteor.methods({
-    serverNotification: function () {
+Push.debug = true;
 
-        var last = PastReminders.findOne({}, {sort: {addedAt: -1}});
-        var badge = 1
-        if (last != null) {
-        badge = last.badge + 1;
-        }
-        
-        //Use find() function to get the user defined notifData and trigger the notification at the specified time
-        var currentUserId = Meteor.userId();
-        var s1 = Meteor.users.find({_id: currentUserId}).fetch()[0].notifData;
-        var len = s1.length;
-        var s2 = s1[len-1].timestamp;
-
-        PastReminders.insert({
-            badge: badge,
-            addedAt: s2
-        }, function (error, result) {
-            if (!error) {
-                Push.send({
-                    from: 'MHB',
-                    title: 'Reminder',
-                    text: 'Just a friendly reminder that you need to take your medication!',
-                    badge: badge,
-                    payload: {
-                        title: 'Reminder',
-                        historyId: result
-                    },
-                    query: { }
-                });
-            }
-        });
-   },
-    removeHistory: function () {
-        PastReminders.remove({}, function (error) {
-            if (!error) {
-                console.log("All past reminders removed");
-            }
-        });
+Push.allow({
+    send: function(userId, notification) {
+        return true; // Allow all users to send
     }
+});
+
+Meteor.methods({
+    serverNotification: function(text,title) {
+        var badge = 1
+        Push.send({
+             from: 'push',
+             title: title,
+             text: text,
+             badge: badge, //optional, use it to set badge count of the receiver when the app is in background.
+             query: {
+             } // Query the appCollection
+             // token: appId or token eg. "{ apn: token }"
+             // tokens: array of appId's or tokens
+             // payload: user data
+             // delayUntil: Date
+         });
+    },
+    userNotification: function(text,title,userId) {
+        var badge = 1
+        Push.send({
+            from: 'push',
+            title: title,
+            text: text,
+            badge: badge,
+            sound: 'airhorn.caf',
+            payload: {
+                title: title,
+                historyId: result
+            },
+            query: {
+                userId: userId //this will send to a specific Meteor.user()._id
+            }
+        });
+    },
+    removeHistory: function() {
+        NotificationHistory.remove({}, function(error) {
+            if (!error) {
+                console.log("All history removed");
+            }
+        });
+    },
 });

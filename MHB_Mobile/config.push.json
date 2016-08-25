@@ -1,23 +1,13 @@
-//{
-  //"apn": {
-    //"passphrase": "xxxxxxxxx",  
-    //"key": "apnProdKey.pem",
-    //"cert": "apnProdCert.pem"
-  //},
-  //"apn-dev": {
-    //"passphrase": "xxxxxxxxx",
-    //"key": "apnDevKey.pem",
-    //"cert": "apnDevCert.pem"
-  //},  
-  //"gcm": {
-    //"apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    //"projectNumber": //Optional Project Number
-  //},
-  //"production": true,
-  // "badge": true,
-  // "sound": true,
-  // "alert": true,
-  // "vibrate": true,
-  // "sendInterval": 15000,  Configurable interval between sending notifications
-  // "sendBatchSize": 1  Configurable number of notifications to send per batch
+{
+  "apn": {
+    "passphrase": "MingHuang.MyHappyBlood",
+    "key": "MHB_Mobile.pem",
+    "cert": "aps_development.pem",
+    "gateway": "gateway.sandbox.push.apple.com"
+  },
+  "gcm": {
+    "apiKey": "AIzaSyArT14m81fVkOSiwJitBqqgUdcg67yfuI",
+    "projectNumber": 799201605033
+  },
+  "production": true
 }
