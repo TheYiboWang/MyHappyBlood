@@ -13,6 +13,11 @@ import { Meteor } from 'meteor/meteor';
 if (Meteor.isClient) {
 
   Meteor.startup(function () {
+
+    Push.addListener('token', function(token) {
+      alert('Token: ' + JSON.stringify(token));
+    });
+
       Meteor.defer(function () {Router.go('home');});
   });
 
