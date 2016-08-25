@@ -45,12 +45,12 @@ Template.charts.helpers({
                   tick: {
 
                       rotate: 90,
-                      format: function(x) { return moment(x).format('YYYY-MM-DD')}
+                      format: function(x) { return moment(x).format('MM-DD-YYYY')}
                   }
               },
 
                       y: {
-                        max:10,
+                        max:6,
                         min:0,
                         padding: {top:1, bottom:1},
                         label: {

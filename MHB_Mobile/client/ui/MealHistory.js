@@ -8,7 +8,7 @@ Template.charts2.helpers({
          //theReport = allINR.find().fetch();
 
         xData = ['x'];
-        yData = ['Meal History'];
+        yData = ['Green Meal History'];
 
         res_x = _.pluck(theReport, 'timestamp');
         console.log("res_x",res_x);
@@ -48,7 +48,7 @@ Template.charts2.helpers({
 
             y: {
 
-              max:5,
+              max:7,
               min:0,
               padding: {top:1, bottom:1},
               label: {
