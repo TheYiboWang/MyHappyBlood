@@ -7,17 +7,17 @@
 //   version: '0.0.1'
 // });
 
-// App.icons({
+App.icons({
 //   // iOS
 //   'iphone_2x': 'resources/icons/icon-60x60@2x.png',
 //   'ipad': 'resources/icons/icon-76x76.png',
 //   'ipad_2x': 'resources/icons/icon-76x76@2x.png',
 
-//   // Android
-//   'android_mdpi': 'resources/icons/icon-48x48.png',
-//   'android_hdpi': 'resources/icons/icon-72x72.png',
-//   'android_xhdpi': 'resources/icons/icon-96x96.png'
-// });
+  // Android
+  'android_mdpi': 'public/img/Small-Logo.png',
+  'android_hdpi': 'public/img/Small-Logo.png',
+  'android_xhdpi': 'public/img/Small-Logo.png'
+});
 
 // App.launchScreens({
 //   // iOS

@@ -112,48 +112,46 @@ Template.medhistory.rendered = function () {
             source2[i].rendering = 'background';
     };
     	
-    	// delete source[i].timestamp;
-
+    // delete source[i].timestamp;
 	console.log(source1);
     console.log(source2);
 
     /*
      calculate the percentage
     */
-    var startDate  = source[0].timestamp;
-    var currentDate = moment(new Date()).format('YYYY-MM-DD');
-    var diff =  Math.floor(( Date.parse(currentDate) - Date.parse(startDate) ) / 86400000);
-    var percentage =   (source1.length - 3) * 100 /  diff;
-    percentage = Math.round(percentage * 10) / 10;
-    document.getElementById("calculatePercentage").innerHTML = " Total adherence is " + percentage + "%";
-
+    if (source.length > 0) {
+        var startDate  = source[0].timestamp;
+        var currentDate = moment(new Date()).format('YYYY-MM-DD');
+        var diff =  1 + Math.floor(( Date.parse(currentDate) - Date.parse(startDate) ) / 86400000);
+        var percentage =   (source1.length) * 100 /  diff;
+        percentage = Math.round(percentage * 10) / 10;
+        document.getElementById("calculatePercentage").innerHTML = " Total adherence is " + percentage + "%";
+    }
 
 	$('#calendar').fullCalendar({
-    // defaultDate: '2014-11-10',
-    // defaultView: 'agendaMonth',
-    // height: 300,
-    fixedWeekCount: false,
-    allDayDefault: true,
-    header: {
-        left: '',
-        center: 'prev title next',
-        right: ''
-    },
-    eventSources: [
-    {
-    events: source2,
-    color: 'red'
+        // defaultDate: '2014-11-10',
+        // defaultView: 'agendaMonth',
+        // height: 300,
+        fixedWeekCount: false,
+        allDayDefault: true,
+        header: {
+            left: '',
+            center: 'prev title next',
+            right: ''
+        },
+        eventSources: [
+        {
+        events: source2,
+        color: 'red'
 
-    },
-    {
-    events: source1,
-    color: 'green'
-    }
-    ]
+        },
+        {
+        events: source1,
+        color: 'green'
+        }
+        ]
    
-
-});
-
+    });
 
     // var fc = this.$('.fc');
     // this.autorun(function () {

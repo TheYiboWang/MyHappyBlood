@@ -3,9 +3,9 @@
 
 	{{> header title="Medication: Reminders"}}
 
-	<div>
+	<div class="container">
 		<a href="/addReminder">
-			<img src="img/Add.png" alt="Add.png" style="height:30%; width:30%;">
+			<img src="img/Add.png" alt="Add.png" style="height:auto; width:30%;">
 		</a>
 		<br><br>
 	</div>
@@ -18,7 +18,6 @@
 				<th>Dose(mg)</th>
 				<th>Day</th>
 				<th>Reminder</th>
-
 			</tr>
 
 
@@ -28,7 +27,7 @@
 					<td>{{dose}}</td>
 					<p><td>{{#each days}} {{this}}<br> {{/each}}</td></p>
 					<td>{{selectHour}}:{{selectMinute}} {{selectAmPm}}</td>
-					<td><input class="delete" type="image" src="img/Delete.png" alt="Delete.png" style="height: 20%; width:20%"></td>
+					<td><input class="delete" type="image" src="img/Delete.png" alt="Delete.png" style="height: 20%; width:auto;"></td>
 				</tr>
 			{{/each}}
 

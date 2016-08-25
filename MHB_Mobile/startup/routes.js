@@ -53,6 +53,25 @@ Router.route('/warfarin/', function() {
 Router.route('/othermeds/', function() {
   this.render('mylearningOtherMeds');
 });
+
+
+Router.route('/newmeds/', function() {
+  this.render('mylearningNewMeds');
+});
+Router.route('/generalInfo/', function() {
+  this.render('generalinformation');
+});
+Router.route('/Apixaban/', function() {
+  this.render('Apixaban');
+});
+Router.route('/Dabigatran/', function() {
+  this.render('Dabigatran');
+});
+Router.route('/Rivaroxaban/', function() {
+  this.render('Rivaroxaban');
+});
+
+
 Router.route('/warning/', function() {
   this.render('mylearningWarning');
 });
