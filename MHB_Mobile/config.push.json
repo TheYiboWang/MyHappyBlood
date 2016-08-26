@@ -6,8 +6,8 @@
     "gateway": "gateway.sandbox.push.apple.com"
   },
   "gcm": {
-    "apiKey": "AIzaSyArT14m81fVkOSiwJitBqqgUdcg67yfuI",
-    "projectNumber": 799201605033
+    "apiKey": "AIzaSyBw3mnVPrbdHkXvgI8uZG3bNl-n0c26eGo",
+    "projectNumber": 952836423205
   },
   "production": true
 }
