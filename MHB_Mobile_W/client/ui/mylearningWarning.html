@@ -1,0 +1,52 @@
+<template name="mylearningWarning">
+
+
+{{> header title="Warning Signs"}}
+
+
+<div class="container" style="font-size: 18px">
+  
+  <ul class="nav nav-tabs nav-adjust">
+    <li class="active"><a data-toggle="pill" href="#home"><strong>Call Your Doctor if ...</strong></a></li>
+    <li><a data-toggle="pill" href="#menu1"><strong>Call 911 if ...</strong></a></li>
+
+  </ul>
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Call your doctor right away, if you experience any of the following: </h3> <br>
+      <p>Decreased urination (urine output) <br><br>
+		Bruising <br><br>
+		Blood in the urine or stool <br><br>
+		Coughing up or vomiting blood <br><br>
+		Unexpected pain, swelling, or joint pain <br><br>
+		Numbness, tingling, or muscle weakness <br><br>
+		Headaches and feeling dizzy, weak or like you might pass out <br><br>
+		If you fall or injure yourself, especially if you hit your head, your doctor may need to check you <br><br>
+		Tell your doctor if you have any side effect that bothers you or that does not go away <br><br>
+
+	</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Call 9-1-1 if you experience any of the following: </h3> <br>
+      <p>Bleeding that does not stop <br><br>
+		      Severe pain <br><br>
+		      Difficulty breathing <br><br>
+		      Rash <br><br>
+		      Any other serious condition <br><br> </p>
+    </div>
+  </div>
+
+</div>
+    <br><br>
+    <div id="slider" align="center">
+      <input type="range" min="10" max="40" > 
+    </div> <br><br>
+
+    <br><br><br><br>
+  <div id="footer">
+      {{> navbar}}
+  </div>
+
+</template>
+

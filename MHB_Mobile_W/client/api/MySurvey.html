@@ -1,0 +1,83 @@
+<template name="mysurveypage">
+
+{{> header title="My Survey"}}
+
+<div class="container">
+
+{{> survey}} <br> <br>
+
+</div>
+<div id="footer">
+  {{> navbar}}
+</div>
+
+</template>
+
+
+<template name="survey">
+
+
+	<form method="post" style="font-size: 20px; font-family: verdana">
+    <p id="date"></p> <br>
+
+    <div class="q1">
+    1. Did you take your medication today? <br>
+    <input type="radio" name="yesNoBox1" value="yes" id="medyes" > Yes <br>
+    <input type="radio" name="yesNoBox1" value="no" id="medno"> No <br>
+
+    <p1> </p1>
+    <select name="selectWhy" style="font-size: 20px" id="selectWhy">
+      <option value="">(Choose Option)</option>
+      <option value="fogot">I forgot to take it.</option>
+      <option value="refill">I need to refill medication.</option>
+      <option value="lost">I lost my medication.</option>
+      <option value="other">Other</option>
+
+    </select>
+    <br>
+    <textarea form="input" id="txtarea" rows="4" cols="22" placeholder="Please comment why" style="font-size: 20px"></textarea>
+    <!-- style="visibility:hidden" -->
+    <br>
+    </div>
+
+    <div class="q2">
+    2. Have you noticed any bruising or bleeding today? <br>
+
+    <input type="radio" name="yesNoBox2" value="yes" id="bleedyes"> Yes <br>
+    <input type="radio" name="yesNoBox2" value="no" id="bleedno"> No <br> <br>
+
+    <img src="img/Saftey-Tip_All.png" alt="saftey-tip_all" name="safe">
+    </div>
+
+    <div class="q3">
+    3. How many meals did you eat any green vegetables? <br>
+    <input type="radio" name="numberOfMeals" value="0" id="meal0"> 0 
+    <input type="radio" name="numberOfMeals" value="1" id="meal1"> 1
+    <input type="radio" name="numberOfMeals" value="2" id="meal2"> 2
+    <input type="radio" name="numberOfMeals" value="3" id="meal3"> 3
+    <input type="radio" name="numberOfMeals" value="4" id="meal4+"> 4+
+    </div>
+
+  </form>
+
+<div class="container">
+   <ul class="pager" style="font-size: 20px;">
+    <li class="previous"><a href="#">Previous</a></li>
+    <li class="next"><a href="#">Next</a></li>
+  </ul>
+</div>
+
+  <br>
+
+    <div style="text-align: center">
+    <input type="submit" name="submitSurvey" value="Submit" 
+      style="width:200px; height:70px; font-size: 25px; background-color: deepskyblue; border-radius:15px;">
+    </div>
+
+
+    <br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
+
+</template>

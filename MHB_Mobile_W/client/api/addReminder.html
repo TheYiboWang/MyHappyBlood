@@ -1,0 +1,124 @@
+<template name="addReminder">
+	{{> header title="Medication: Reminders"}}
+	<div class="container">
+
+	<form method="post" style="font-size: 20px; font-family: verdana">
+	    <div id="reminderQ1" >
+		    1. Which medication are you taking? <br>
+		    <input type="radio" name="chooseMed" value="Warfarin" id="chooseMedWarfarin" > Warfarin <br>
+		    <input type="radio" name="chooseMed" value="Apixaban" id="chooseMedApixaban"> Apixaban(Eliquis) <br>
+		    <input type="radio" name="chooseMed" value="Dabigatran" id="chooseMedDabigatran"> Dabigatran (Pradaxa)<br>
+		    <input type="radio" name="chooseMed" value="Rivaroxaban" id="chooseMedRivaroxaban"> Rivaroxaban (Xarelto) <br>
+	    </div>
+
+	    <br>
+
+	    <div id="reminderQ2">
+		    2. What dose is your medication? (Enter number) <br>
+		    <input type="number" name="medDose" style="font-size: 10pt"> <strong>mg</strong>
+	    </div>
+
+	    <br>
+
+	    <div class="form-inline">
+	    <div >
+	    3. What days do you take the medication? (Select all that apply) <br>
+				<input type="checkbox" name="reminderDays" value="Sunday"> Sun
+				<input type="checkbox" name="reminderDays" value="Monday"> Mon
+				<input type="checkbox" name="reminderDays" value="Tuesday"> Tue
+				<input type="checkbox" name="reminderDays" value="Wednesday"> Wed <br>
+				<input type="checkbox" name="reminderDays" value="Thursday"> Thu
+				<input type="checkbox" name="reminderDays" value="Friday"> Fri
+				<input type="checkbox" name="reminderDays" value="Saturday"> Sat
+	    </div>
+
+	    <br>
+
+	    </div>
+
+	    <div class="form-inline">
+
+	    	4. What time do you want to set your reminder? (Enter time) <br>
+
+
+			<select class="form-control" name="selectHour" id="selectHour">
+			  <option disabled="disabled"> Hour </option>
+			  <option selected="true" value="00">01</option>
+			  <option value="02">02</option>
+			  <option value="03">03</option>
+			  <option value="04">04</option>
+			  <option value="05">05</option>
+			  <option value="06">06</option>
+			  <option value="07">07</option>
+			  <option value="08">08</option>
+			  <option value="09">09</option>
+			  <option value="10">10</option>
+			  <option value="11">11</option>
+			  <option value="12">12</option>
+			</select>
+
+			<select class="form-control" name="selectMinute" id="selectMinute">
+			  <option disabled="disabled"> Minute </option>
+			  <option selected="true" value="00">00</option>
+			  <option value="15">15</option>
+			  <option value="30">30</option>
+			  <option value="45">45</option>
+			</select>
+
+			<select class="form-control" name="selectAmPm" id="selectAmPm">
+			  <option disabled="disabled"> AM/PM </option>
+			  <option selected="true"  value="AM">AM</option>
+			  <option value="PM">PM</option>
+			</select>
+	    </div>
+
+
+			<br>
+			<div style="text-align: center">
+	    <input type="submit" name="submitSurvey" value="Submit"
+	      style="width:200px; height:70px; font-size: 25px; background-color: deepskyblue">
+	    </div>
+
+  	</form>
+
+	</div>
+
+
+
+    <br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
+</template>
+
+
+
+
+<!-- <div class="form-inline">
+  <div class="form-group col-lg-12">
+    <label>Birthday</label><br>
+    <select class="form-control" id="sel1">
+      <option value="jan">Jan</option>
+      <option value="jan">Feb</option>
+      <option value="jan">Mar</option>
+       ................
+      <option value="jan">Dec</option>
+    </select>
+    <select class="form-control" id="sel2">
+      <option value="">Day</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      ................
+      <option value="jan">12</option>
+    </select>
+    <select class="form-control" id="sel2">
+      <option value="">Year</option>
+      <option value="1992">1992</option>
+      <option value="1993">1993</option>
+      <option value="1994">1994</option>
+      ................
+      <option value="2015">2015</option>
+    </select>
+  </div>
+</div> -->

@@ -1,0 +1,21 @@
+<!-- inrhistory.html -->
+
+<template name="inrhistory">
+	{{> header title="My Progress: My INR History"}}
+
+	{{> charts}}
+
+	<br><br><br><br>
+    <div id="footer">
+      {{> navbar}}
+    </div>
+</template>
+
+
+<template name = "charts">
+<div class="container">
+	{{#if Template.subscriptionsReady}}
+		{{> c3 myChartData}}
+	{{/if}}
+	</div>
+</template>

@@ -51,23 +51,25 @@ Template.survey.events({
 		if ($('[class="q2"]').is(":visible")) {
 			$('[class="q2"]').hide();
 			$('[class="q1"]').show();
-		}
-		if ($('[class="q3"]').is(":visible")) {
-			$('[class="q3"]').hide();
-			$('[class="q2"]').show();
 			$('[name="submitSurvey"]').hide();
 		}
+		// if ($('[class="q3"]').is(":visible")) {
+		// 	$('[class="q3"]').hide();
+		// 	$('[class="q2"]').show();
+		// 	$('[name="submitSurvey"]').hide();
+		// }
 	},
 
 	'click li[class=next]': function(event) {
 		if ($('[class="q2"]').is(":visible")) {
-			$('[class="q2"]').hide();
-			$('[class="q3"]').show();
-			$('[name="submitSurvey"]').show();
+			// $('[class="q2"]').hide();
+			// $('[class="q3"]').show();
+			// $('[name="submitSurvey"]').show();
 		}
 		if ($('[class="q1"]').is(":visible")) {
 			$('[class="q1"]').hide();
 			$('[class="q2"]').show();
+			$('[name="submitSurvey"]').show();
 		}
 
 
@@ -99,6 +101,7 @@ Template.survey.events({
 			var bleedbool = false;
 		}
 
+		
 		if(meal0.checked){
 			var meal = 0;
 		}
@@ -113,6 +116,8 @@ Template.survey.events({
 		}
 		else if (meal4.checked) {
 			var meal = 4;
+		} else {
+			var meal = -1;
 		}
 		
 		var reasonchoose = document.getElementById("selectWhy").value;

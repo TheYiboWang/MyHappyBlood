@@ -1,0 +1,13 @@
+{
+  "apn": {
+    "passphrase": "MingHuang.MyHappyBlood",
+    "key": "MHB_Mobile.pem",
+    "cert": "aps_development.pem",
+    "gateway": "gateway.sandbox.push.apple.com"
+  },
+  "gcm": {
+    "apiKey": "AIzaSyBw3mnVPrbdHkXvgI8uZG3bNl-n0c26eGo",
+    "projectNumber": 952836423205
+  },
+  "production": true
+}

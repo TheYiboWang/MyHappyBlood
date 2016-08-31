@@ -1,0 +1,72 @@
+<!-- This is the login template -->
+<template name="login">
+  <head>
+    <title>myhappyblood</title>
+  </head>
+  <h1>
+    <div id="logo">
+      <img src="img/Logo.png" alt="Logo.png">
+    </div>
+  </h1>
+
+  <h2>
+    <div id="login-screen">
+      {{> atForm}}   
+    </div>
+  </h2>
+
+<!-- <a href="{{pathFor route='home'}}">home</a> -->
+</template>
+
+
+
+
+<!-- This is the home page template -->
+<template name="home">
+
+{{> header title="Welcome"}}
+
+<div class="container">
+  <table align="center">
+    <tr>
+      <td style="padding-right:2px; padding-bottom: 2px;">
+        <a href="/myprogress">
+          <img src="img/My-Progress.png" alt="My Profile" >
+        </a>
+      </td>
+
+      <td style="padding-left: 2px; padding-bottom: 2px;">
+        <a href="/mysurveypage">
+          <img src="img/My-Survey.png" alt="My survey" >
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding-right:2px; padding-top: 2px;">
+        <a href="/setupPushReminder">
+          <img src="img/Medication-Reminder.png" alt="My Meds" >
+        </a>
+      </td>
+
+      <td style="padding-left:2px; padding-top: 2px;">
+        <a href="/mylearningpage">
+          <img src="img/Learning.png" alt="My learning" >
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+  <!-- <input type="button" class="logout" value="Log Out"> <br><br><br><br> -->
+
+  <br><br>
+  <div id="footer">
+  {{> navbar}}
+  </div>
+
+</template>

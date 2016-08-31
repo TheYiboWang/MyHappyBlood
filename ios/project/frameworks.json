@@ -1,5 +1,6 @@
 {
     "WebKit.framework": 1,
     "CFNetwork.framework": 1,
-    "libz.dylib": 1
+    "libz.dylib": 1,
+    "AudioToolbox.framework": 2
 }
