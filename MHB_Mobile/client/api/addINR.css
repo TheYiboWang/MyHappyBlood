@@ -1,0 +1,32 @@
+/*addINR.css
+*/
+/*input[class="subimt-INR"] {
+	max-width:300px; 
+	height:70px; 
+	font-size: 1em;
+	background-image: url("img/Small-Tab_Unclicked.png");
+	background-size:133px 70px;
+	
+}
+
+input[class="subimt-INR"]:active {
+	background-image: url('img/Small-Tab_Clicked.png');
+	background-size:133px 70px;
+}*/
+
+/*#subimt-INR {
+	width:10px;
+	
+}*/
+
+
+.test-datepicker {
+	width:280px;
+	font-size: 1em;
+}
+
+.inr-test-result {
+	width:250px;
+	font-size: 1em;
+	text-align: center;
+}

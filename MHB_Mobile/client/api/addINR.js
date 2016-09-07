@@ -1,5 +1,5 @@
 Template.addinr.rendered=function() {
-	$('#test-datepicker').datepicker();
+	$('.test-datepicker').datepicker();
 }
 
 /***
@@ -11,20 +11,28 @@ Template.addinr.rendered=function() {
 Template.addinr.events({
 
     /*WHEN CLICK SUBMISSION BUTTON EVENT HAPPENS*/
-	'click input[name=submitINR]': function(event){
+	'click [class="submit-INR"]': function(event){
+
 		event.preventDefault();
    	var documentId = this._id;
 
 		var currentUserId = Meteor.userId();
 
-		console.log(currentUserId);
-		console.log("written");
+		console.log("currentUserId:", currentUserId);
+		
 		var f1 = document.forms[0]; //get the input fields
 
 		console.log(f1[0].value);
 		console.log(f1[1].value);
 
-
+	if (f1[0].value == null || f1[0].value == "" || f1[1].value == null || f1[1].value =="") {
+      alert("Please Fill All Required Field");
+      return false;
+     } else if (f1[1].value < 0 || f1[1].value > 10) {
+     	alert("Your INR input is invalid");
+      return false;
+     } else {
+      	console.log("running else")
 		const INRdata = {
 			timestamp: moment(new Date()).format('YYYY-MM-DD'),
 			dot: moment(f1[0].value).format('YYYY-MM-DD'),
@@ -41,6 +49,7 @@ Template.addinr.events({
 
 
 		Router.go('/thankyou');
+		}
 	}
 
 

@@ -1,11 +1,11 @@
-// App.info({
-//   name: 'Local Market',
-//   description: 'A recipe sharing app made in Meteor.',
-//   author: 'Percolate Studio Team',
-//   email: 'us@percolatestudio.com',
-//   website: 'http://percolatestudio.com',
-//   version: '0.0.1'
-// });
+App.info({
+  name: 'My Happy Blood',
+  //description: 'A recipe sharing app made in Meteor.',
+  author: 'My Happy Blood Team',
+  email: 'myhappyblood@gmail.com',
+  website: 'http://mhb.calit2.uci.edu:3000',
+  version: '0.0.1'
+});
 
 App.icons({
 //   // iOS

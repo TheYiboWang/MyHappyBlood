@@ -6,14 +6,12 @@
     height: 240px;
 }
 
-#logo {
+.logo {
 	max-width: 577px;
 	margin: 5px auto;
 }
 img {
 		max-width: 100%;
-		position: relative;
-
 	}
 
 
