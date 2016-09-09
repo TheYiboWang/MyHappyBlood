@@ -11,7 +11,12 @@ Template.setupPushReminder.helpers({
 Template.setupPushReminder.events({
 
 	"click .delete": function () {
-		PastReminders.remove(this._id);
+
+		var result = confirm("Want to delete?");
+		if (result) {
+			PastReminders.remove(this._id);
+		}
+		
 	},
 
 });

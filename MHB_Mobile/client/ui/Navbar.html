@@ -3,28 +3,56 @@
 <!-- This is the navigation bar template -->
 <template name="navbar">
   <table style="background-color: black; width:100%; height:100%;" align="center">
-  <thead>
-    <tr>
-      <td>
-        
-        <img src="img/Left-Arrow.png" style="width: 50%; height: 50%; align:center" onClick="history.go(-1);">
-       
-      </td>
+    <thead>
+      <tr>
+        <td>
+
+          <img src="img/Left-Arrow.png" style="width: 50%; height: 50%; align:center" onClick="history.go(-1);">
+
+        </td>
 
 
-      <td align="center">
-        <a href="/home">
-          <img src="img/Home.png" style="width: 50%; height: 50%">
-        </a>
-      </td>
+        <td align="center">
+          <a href="/home">
+            <img src="img/Home.png" style="width: 50%; height: 50%">
+          </a>
+        </td>
 
 
-      <td align="right">
-        <img src="img/Right-Arrow.png" style="width: 50%; height: 50%" onClick="history.go(1);">
-      </td>
-    </tr>
-  </thead>
+        <td align="right">
+          <img src="img/Right-Arrow.png" style="width: 50%; height: 50%" onClick="history.go(1);">
+        </td>
+      </tr>
+    </thead>
   </table>
 
 
+</template>
+
+
+<template name="subnav">
+  <div class="sub-nav-footer">
+    <ul>
+      <li>
+        <a href="#"> <img src="img/sub-nav-buttons/Add-Edit-Button.png" /> </a>
+      </li>
+
+      <li>
+      <a href="/inrhistory"> <img src="img/sub-nav-buttons/View-INR-Button.png" /> </a>
+      </li>
+
+      <li>
+        <a href="/mealshistory"> <img src="img/sub-nav-buttons/Green-Diary-Button.png" /> </a>
+      </li>
+
+      <li>
+        <a href="/medhistory"> <img src="img/sub-nav-buttons/Pill-Button.png" /> </a>
+      </li>
+
+      <li>
+        <a href="#"> <img src="img/sub-nav-buttons/Condition-Button.png"  /> </a>
+      </li>
+
+    </ul>
+  </div>
 </template>
