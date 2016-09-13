@@ -1,4 +1,4 @@
-<template name="condition-history"> 
+<template name="conditionhistory"> 
 
 
 	{{> header title="Condition History"}}
@@ -8,19 +8,21 @@
 		<table style="width:100%">
 
 			<tr>
-				<th>Date</th>
-				<th>Bruising/Bleeding</th>
-				<th>Explain</th>
+				<th align="center">Date</th>
+				<th align="center">Bruising/Bleeding</th>
+				<th align="center">Explain</th>
 			</tr>
 
 
-			{{#each pastReminders}}
+			{{#each conditionHistory}}
 			<tr>
-				<td>{{medicine}}</td>
-				<td>{{dose}}</td>
-				<p><td>{{#each days}} {{this}}<br> {{/each}}</td></p>
+				<td>{{timestamp}}</td>
+				<td>{{bleedOrNo}}</td>
+				<td>{{bleedText}}</td>
+				
+<!-- 				<p><td>{{#each days}} {{this}}<br> {{/each}}</td></p>
 				<td>{{selectHour}}:{{selectMinute}} {{selectAmPm}}</td>
-				<td><input class="delete" type="image" src="img/Delete.png" alt="Delete.png" style="height: 20%; width:auto;"></td>
+				<td><input class="delete" type="image" src="img/Delete.png" alt="Delete.png" style="height: 20%; width:auto;"></td> -->
 			</tr>
 			{{/each}}
 

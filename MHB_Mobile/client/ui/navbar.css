@@ -1,44 +1,105 @@
 /*sliderbar.css
 */
 
+#footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  width: auto;
+
+}
+
+.sub-nav-footer {
+  background-color: black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110px;
+  width: auto;
+}
+
+.sub-nav-footer ul {
+  align-items: center;
+  display:     flex;
+  padding-left:     15px;
+  padding-right: 15px;
+}
+
+.sub-nav-footer ul li {
+  align: center;
+  flex: 1;
+}
+
+.sub-nav-footer ul li img{
+  width:50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.zoom-in {
+  position: fixed;
+  right:0;
+  bottom: 0;
+}
+.zoom-in > img {
+  width:24px;
+}
+
+.zoom-out {
+  position: fixed;
+  left:0;
+  bottom: 0;
+}
+.zoom-out > img {
+  width:24px;
+}
+
+
+
+
 /* Special styling for WebKit/Blink */
 /**/
 .nav-tabs{
-/*color: white;*/
-/*background-color:#C8D3DB;*/
+  /*color: white;*/
+  /*background-color:#C8D3DB;*/
 
- 
+
 }
 .nav-tabs > li > a{
-color: black;
-border-radius: 5px;
-background-image: url("img/Small-Tab_Unclicked.png");
-background-size: auto ;
-background-repeat: no-repeat;
-background-position: center;
- 
+  color: black;
+  border-radius: 5px;
+  background-image: url("img/Small-Tab_Unclicked.png");
+  background-size: auto ;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .nav-tabs > li.active > a,
- 
+
 .nav-tabs > li.active > a:focus,
- 
+
 .nav-tabs > li.active > a:hover{
-background-image: url("img/Small-Tab_Clicked.png");
-background-position: center;
-/*background-color: #3EB0F7 !important;*/
- 
-color:white;
- 
+  background-image: url("img/Small-Tab_Clicked.png");
+  background-position: center;
+  /*background-color: #3EB0F7 !important;*/
+
+  color:white;
+
 }
 
 input[type=range] {
 	position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    height: 65.5px;
-    
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 65.5px;
+
   -webkit-appearance: none;
   width: 100%;
   margin: 5px 0;

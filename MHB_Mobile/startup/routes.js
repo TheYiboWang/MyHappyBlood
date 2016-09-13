@@ -39,6 +39,10 @@ Router.route('/myprogress', function() {
   this.render('myprogress');
 });
 
+Router.route('/mycondition', function() {
+  this.render('conditionhistory');
+});
+
 Router.route('/mylearningpage', function() {
   this.render('mylearningpage');
 });

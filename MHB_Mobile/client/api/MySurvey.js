@@ -2,13 +2,11 @@
 
 Template.survey.rendered=function() {
 
-
-
-
 	document.getElementById("date").innerHTML = "Date: <br>" + Date();
 	$('[class="q2"]').hide();
 	$('[class="q3"]').hide();
 	$("#txtarea").hide();
+	$("#txtarea2").hide();
 	$('[name="selectWhy"]').hide();
 	$('[alt="saftey-tip_all"]').hide();
 	$('[class="submit-survey"]').hide();
@@ -40,8 +38,10 @@ Template.survey.rendered=function() {
 	$('[name="yesNoBox2"]').change(function() {
 		var val = $('[name="yesNoBox2"]:checked').val();
 		if (val == "yes") {
+			$("#txtarea2").show();
 			$('[alt="saftey-tip_all"]').show();
 		} else {
+			$("#txtarea2").hide();
 			$('[alt="saftey-tip_all"]').hide();
 		}
 	});
@@ -98,6 +98,7 @@ Template.survey.events({
 
 			var medyes = document.getElementById("medyes");
 			var bleedyes = document.getElementById("bleedyes");
+
 			var meal0 = document.getElementById("meal0");
 			var meal1 = document.getElementById("meal1");
 			var meal2 = document.getElementById("meal2");
@@ -112,9 +113,9 @@ Template.survey.events({
 			}
 
 			if(bleedyes.checked) {
-				var bleedbool = true;
+				var bleedbool = "Yes";
 			} else {
-				var bleedbool = false;
+				var bleedbool = "No";
 			}
 
 
@@ -139,6 +140,8 @@ Template.survey.events({
 			var reasonchoose = document.getElementById("selectWhy").value;
 			var reasontext = document.getElementById("txtarea").value;
 
+			var bleedexplain = document.getElementById("txtarea2").value;
+
 			console.log(meal);
 			console.log(medbool);
 			console.log(bleedbool);
@@ -148,6 +151,7 @@ Template.survey.events({
 				reason1: reasonchoose,
 				reason2: reasontext,
 				bleedOrNo: bleedbool,
+				bleedText: bleedexplain,
 				mealTimes: meal,
 				createdBy: currentUserId
 			};

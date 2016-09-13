@@ -57,7 +57,7 @@ Template.mylearningWarfarin.events ({
 Template.mylearningWarfarin.rendered = function() {
 $('input').change(function() {
     var v = $(this).val();
-    $('[class="tab-content"]').css('font-size', v + 'px');
+    $('[class="tab-content container"]').css('font-size', v + 'px');
 });
 
 

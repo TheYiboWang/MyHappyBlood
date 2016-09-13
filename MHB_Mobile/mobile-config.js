@@ -14,6 +14,7 @@ App.icons({
 //   'ipad_2x': 'resources/icons/icon-76x76@2x.png',
 
   // Android
+  'android_ldpi': 'public/img/Icon Logos/MHB-36.png',
   'android_mdpi': 'public/img/Icon Logos/MHB-48.png',
   'android_hdpi': 'public/img/Icon Logos/MHB-72.png',
   'android_xhdpi': 'public/img/Icon Logos/MHB-96.png',

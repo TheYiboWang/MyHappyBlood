@@ -12,7 +12,7 @@ Template.setupPushReminder.events({
 
 	"click .delete": function () {
 
-		var result = confirm("Want to delete?");
+		var result = confirm("Are you sure you want to delete your reminder?");
 		if (result) {
 			PastReminders.remove(this._id);
 		}

@@ -25,8 +25,6 @@
       </tr>
     </thead>
   </table>
-
-
 </template>
 
 
@@ -34,25 +32,41 @@
   <div class="sub-nav-footer">
     <ul>
       <li>
-        <a href="#"> <img src="img/sub-nav-buttons/Add-Edit-Button.png" /> </a>
+        <a href="/addinr"> <img src="img/sub-nav-buttons/Add-INR_Icon.png" /> </a>
       </li>
 
       <li>
-      <a href="/inrhistory"> <img src="img/sub-nav-buttons/View-INR-Button.png" /> </a>
+        <a href="/inrhistory"> <img src="img/sub-nav-buttons/View-Edit-INR_Icon.png" /> </a>
       </li>
 
       <li>
-        <a href="/mealshistory"> <img src="img/sub-nav-buttons/Green-Diary-Button.png" /> </a>
+        <a href="/mealshistory"> <img src="img/sub-nav-buttons/Green-Meals-Icon.png" /> </a>
       </li>
 
       <li>
-        <a href="/medhistory"> <img src="img/sub-nav-buttons/Pill-Button.png" /> </a>
+        <a href="/medhistory"> <img src="img/sub-nav-buttons/Medication_Icon.png" /> </a>
       </li>
 
       <li>
-        <a href="#"> <img src="img/sub-nav-buttons/Condition-Button.png"  /> </a>
+        <a href="/mycondition"> <img src="img/sub-nav-buttons/Condition_Icon.png"  /> </a>
       </li>
 
     </ul>
+  </div>
+</template>
+
+
+
+<template name="zoombar">
+  <div class="zoom-bar" id="slider" align="center">
+    <input type="range" min="10" max="40" > 
+  </div>
+
+  <div class="zoom-in">
+    <img src="img/Zoom-In.png">
+  </div>
+
+  <div class="zoom-out">
+    <img src="img/Zoom-Out.png">
   </div>
 </template>
