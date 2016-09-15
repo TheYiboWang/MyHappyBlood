@@ -34,4 +34,6 @@ body {
     }
 
 
-
+body {
+    overflow-y: scroll;
+}

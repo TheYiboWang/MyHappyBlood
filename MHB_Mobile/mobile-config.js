@@ -19,7 +19,7 @@ App.icons({
   'android_hdpi': 'public/img/Icon Logos/MHB-72.png',
   'android_xhdpi': 'public/img/Icon Logos/MHB-96.png',
   'android_xxhdpi': 'public/img/Icon Logos/MHB-144.png',
-  'android_xxhdpi': 'public/img/Icon Logos/MHB-192.png'
+  'android_xxxhdpi': 'public/img/Icon Logos/MHB-192.png'
 });
 
 // App.launchScreens({
