@@ -19,7 +19,7 @@ Template.addinr.events({
 		var currentUserId = Meteor.userId();
 
 		console.log("currentUserId:", currentUserId);
-		
+
 		var f1 = document.forms[0]; //get the input fields
 
 		console.log(f1[0].value);
@@ -33,7 +33,7 @@ Template.addinr.events({
       return false;
      } else {
       	console.log("running else")
-		const INRdata = {
+		const new_INR = {
 			timestamp: moment(new Date()).format('YYYY-MM-DD'),
 			dot: moment(f1[0].value).format('YYYY-MM-DD'),
 			ts: Number(f1[1].value),
@@ -41,12 +41,30 @@ Template.addinr.events({
 		};
 
 //Push new INRdata to users collections with associated user
-		Meteor.users.update( { _id: currentUserId }, {
-			$push: {
-				INRhistory: INRdata
-			}
-		});
 
+		var INRhistory = Meteor.users.findOne(currentUserId).INRhistory;
+		var last_INR = INRhistory[INRhistory.length - 1];
+		console.log(INRhistory);
+		if (INRhistory.length == 0 || new_INR.timestamp != last_INR.timestamp)
+		{
+			Meteor.users.update( { _id: currentUserId }, {
+				$push: {
+					INRhistory: new_INR
+				}
+			});
+		}
+		else {
+			Meteor.users.update( { _id: currentUserId }, {
+				$pull: {
+					INRhistory: last_INR
+				}
+			});
+			Meteor.users.update( { _id: currentUserId }, {
+				$push: {
+					INRhistory: new_INR
+				}
+			});
+		}
 
 		Router.go('/thankyou');
 		}
