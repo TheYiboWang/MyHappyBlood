@@ -60,7 +60,7 @@ function schedule(id, title, message, schedule_time)
     cordova.plugins.notification.local.schedule({
         id: id,
         title: title,
-        message: "Hello "+message,
+        message: message,
         firstAt: schedule_time,
         every: "week"
     });
@@ -78,8 +78,8 @@ function add_reminder(reminder)
 
   //  console.log(reminder);
 
-    var title = "MHB Reminder " + reminder.medicine;
-    var message = reminder.medicine + " "+ reminder.dose;
+    var title = "MHB Reminder ";
+    var message = "Take Medication "+ reminder.dose + "mg";
 
     var time = reminder.selectHour + ":" + reminder.selectMinute + ":00 " +  reminder.selectAmPm;
     var week = getNext7Days(time);
