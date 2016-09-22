@@ -1,5 +1,5 @@
-//Push.debug = true;
-
+//Push.debug = false;
+/*
 Push.allow({
     send: function(userId, notification) {
         return true; // Allow all users to send
@@ -47,3 +47,4 @@ Meteor.methods({
         });
     },
 });
+*/
